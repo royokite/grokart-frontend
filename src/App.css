@@ -2,6 +2,9 @@
 .navbar-nav a{
   font-size: 18px;
 }
-.btn:active {
-  outline-color: red;
+.card {
+ background-image: url(./img/PSX_20221223_172358\ \(1\).png);
+}
+.card-text text-black{
+  float: left;
 }
