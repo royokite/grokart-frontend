@@ -2,3 +2,6 @@
 .navbar-nav a{
   font-size: 18px;
 }
+.btn:active {
+  outline-color: red;
+}
