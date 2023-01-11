@@ -4,7 +4,8 @@ import Grokart from '../img/WhatsApp Image 2023-01-06 at 3.57.47 PM (1) (2).jpeg
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+      <nav id = "navbar"
+       className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
         <div className="container" >
         <img></img>
           <a className="navbar-brand fw-bold fs-4" href="#">
