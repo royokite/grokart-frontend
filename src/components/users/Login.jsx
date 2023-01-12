@@ -45,8 +45,7 @@ function Login() {
           width={50}
           />
       <label >
-        <input className="form-control mb-5 text-warning ml-50
-        "
+        <input className="form-control mb-5 text-warning form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
           type="text"
           placeholder='Username'
           value={username}
@@ -55,7 +54,7 @@ function Login() {
       </label>
       <br />
       <label>
-        <input className="form-control mb-5 text-warning position-relative float-right
+        <input className="form-control mb-5 text-warning pl-3 form-control-lg mt-5
         "
           type="password"
           placeholder='Password'

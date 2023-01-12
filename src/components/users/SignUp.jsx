@@ -44,7 +44,7 @@ function SignUp() {
           width={50}
           />
       <label>
-        <input className='form-control mb-5 text-warning '
+        <input className='form-control mb-5 text-warning form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle'
           type="text"
          placeholder="Username"
           value={username}
@@ -53,7 +53,8 @@ function SignUp() {
       </label>
       <br />
       <label>
-        <input className='form-control mb-5 text-warning '
+        <input className='form-control mb-5 text-warning form-control-lg mt-5
+        '
         placeholder='Password'
           type="password"
           value={password}
@@ -62,7 +63,8 @@ function SignUp() {
       </label>
       <br />
       <label>
-        <input className='form-control mb-5 text-warning pl-3'
+        <input className='form-control mb-5 text-warning pl-3 form-control-lg
+        '
         placeholder='Confirm password'
           type="password"
           value={passwordConfirmation}
