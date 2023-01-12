@@ -16,7 +16,7 @@ function SignUp() {
 
     // Perform sign-up logic, e.g. send a request to the server with the username and password
     // and handle the response
-    signUp(username,password)
+    SignUp(username,password)
     .then( response => {
         // handle success
     }).catch(error => {
