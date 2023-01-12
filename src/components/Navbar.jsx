@@ -1,16 +1,12 @@
 import React from "react";
-import Grokart from '../img/WhatsApp Image 2023-01-06 at 3.57.47 PM (1) (2).jpeg'
 
 const Navbar = () => {
   return (
     <div>
-      <nav id = "navbar"
-       className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+      <nav id="navbar" className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
         <div className="container" >
-        <img></img>
-          <a className="navbar-brand fw-bold fs-4" href="#">
-            Grokart
-            <a href= ""><img src={Grokart} alt="" /></a>
+          <a href="/">
+            <img src="./images/gro-kart-logo.png" style={{height: "4rem", width: "auto"}}></img>
           </a>
           <button
             className=" navbar-toggler "
@@ -47,11 +43,8 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="buttons">
-              <a href="" className="btn btn-outline-dark">
-                <i className="fa fa-sign-in me-1"></i>Sign-in
-              </a>
               <a href="" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus me-1"></i>Register
+                <i className="fa fa-user-plus me-1"></i>Account
               </a>
               <a href="" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-shopping-cart me-1"></i>Cart (0)
