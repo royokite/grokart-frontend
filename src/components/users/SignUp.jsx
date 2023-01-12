@@ -25,19 +25,36 @@ function SignUp() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <section className="signin-container">
+    <img
+          src="./images/james9876_beautiful_login_page_for_an_online_grocery_website_wh_c635d628-3c57-436e-82f6-6c844b467da4 (1) (1).png"
+          className="card-img"
+          alt="background"
+          height={1000}
+
+        />
+    <form onSubmit={handleSubmit} className="form-group
+    position-absolute top-50 start-50 translate-middle"
+    >
+      <img
+          src="./images/gro-kart-logo.png"
+          className="card-img mb-5 w-50 position-relative start-50 translate-middle top-0"
+          alt="banner"
+          height={100}
+          width={50}
+          />
       <label>
-        Username:
-        <input
+        <input className='form-control mb-5 text-warning '
           type="text"
+         placeholder="Username"
           value={username}
           onChange={(event) => setUsername(event.target.value)}
         />
       </label>
       <br />
       <label>
-        Password:
-        <input
+        <input className='form-control mb-5 text-warning '
+        placeholder='Password'
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
@@ -45,8 +62,8 @@ function SignUp() {
       </label>
       <br />
       <label>
-        Confirm Password:
-        <input
+        <input className='form-control mb-5 text-warning pl-3'
+        placeholder='Confirm password'
           type="password"
           value={passwordConfirmation}
           onChange={(event) => setPasswordConfirmation(event.target.value)}
@@ -54,8 +71,10 @@ function SignUp() {
       </label>
       <br />
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button type="submit">Sign Up</button>
+      <button className="btn btn-primary btn-lg position-absolute start-50 translate-middle mt-5 text-warning"
+      type="submit">Sign Up</button>
     </form>
+    </section>
   );
 }
 
