@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SignUpPage() {
+function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
@@ -59,4 +59,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUpPage;
+export default SignUp;

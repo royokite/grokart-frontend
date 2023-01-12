@@ -5,10 +5,10 @@ const Home = () => {
     <div className="hero">
       <div className="card text-bg-dark text-white border-0">
         <img
-          src="/src/img/PSX_20221223_172358 (1).png"
+          src="./images/welcome-bg.png"
           className="card-img"
           alt="background"
-          height="600"
+          height="660"
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center ">
           <div className="container">

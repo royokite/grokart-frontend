@@ -45,29 +45,30 @@ const Products = () => {
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button className="btn btn-outline-dark me-2"  onClick={()=>setFilter(data)}>ALL</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")} > Men's closet</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>Women's closet</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")} > Dairy</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>Meat</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Fruits and Vegetables</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Drinks</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Pantry</button>
         </div>
         {filter.map((product) => {
           return (
-            <>
-              <div className="col-md-3 mb-4">
-                <div class="card h-100 text-center p-4" key= {product.id}>
-                  <img src={product.image} class="card-img-top" alt={product.title} height="250px" />
-                  <div class="card-body">
-                    <h5 class="card-title mb-0">{product.title.substring(0,12)}...</h5>
-                    <p class="card-text lead fw-bold">
-                      ${product.price}
+            // <>
+              <div className="col-md-3 mb-4" key={product.id}>
+                <div className="card h-100 text-center p-4" key={product.id}>
+                  <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
+                  <div className="card-body">
+                    <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
+                    <p className="card-text lead fw-bold">
+                      Ksh. {product.price}
                     </p>
-                    <a href="#" class="btn btn-outline-dark">
-                      Buy Now
+                    <a href="#" className="btn btn-outline-dark">
+                      Add to Cart
                     </a>
                   </div>
                 </div>
               </div>
-            </>
+            // </>
           );
         })}
       </>
