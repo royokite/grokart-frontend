@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Login from './components/users/Login';
 import SignUp from './components/users/SignUp';
-import Checkout from './components/Checkout';
+import Checkout from './components/Checkout/Checkout.jsx';
 
 function App() {
   return (
