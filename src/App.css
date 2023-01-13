@@ -1,24 +1,25 @@
 /*Navbar*/
-.navbar-nav a{
+.navbar-nav a {
   font-size: 18px;
 }
+
 .btn:active {
   outline-color: red;
 }
 
-.navbar {
-background: rgba(38, 27, 180, 0.01);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.6px);
--webkit-backdrop-filter: blur(5.6px);
-border: 1px solid rgba(38, 27, 180, 0.13);
-}
+/* .navbar {
+  background: rgba(38, 27, 180, 0.01);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(38, 27, 180, 0.13);
+} */
 
 .btn {
-  background-color: #4D7E3E !important;
+  background-color: #4d7e3e !important;
   width: 75%;
 }
-.Checkout{
-  background-color: #4D7E3E;
+
+.Checkout {
+  background-color: #4d7e3e;
 }

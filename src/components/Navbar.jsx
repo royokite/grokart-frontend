@@ -2,58 +2,32 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav id="navbar" className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
-        <div className="container" >
-          <a href="/">
-            <img src="./images/gro-kart-logo.png" style={{height: "4rem", width: "auto"}}></img>
-          </a>
-          <button
-            className=" navbar-toggler "
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className=" navbar-toggler-icon "></span>
-          </button>
-          <div className="collapse navbar-collapse" id=" navbarSupportedContent ">
-            <ul className=" navbar-nav mx-auto mb-2 mb-lg-0 ">
-              <li className=" nav-item ">
-                <a className=" nav-link active " aria-current=" page " href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Products
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>{" "}
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact
-                </a>
-              </li>
-            </ul>
-            <div className="buttons">
-              <a href="/signup" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus me-1"></i>Account
-              </a>
-              <a href="" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-shopping-cart me-1"></i>Cart (0)
-              </a>
+    <nav className="navbar navbar-expand-sm bg-light navbar-light align-middle">
+      <div className="container-fluid">
+        <ul className="navbar-nav  d-flex justify-content-between align-items-center w-100">
+          <li className="nav-item">
+            <a className="nav-link" href="/"><img src="./images/gro-kart-website-favicon-color.png" style={{height: "4rem", width: "auto"}}></img></a>
+          </li>
+          <li className="nav-item w-auto">
+            <input type="text"/>
+          </li>
+          <li className="nav-item d-flex flex-row mx-5">
+            <div className="dropdown">
+              <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                <i className="fa fa-user-circle"></i>
+              </button>
+              <ul className="dropdown-menu">
+                <li><a className="dropdown-item" href="#">Orders</a></li>
+                <li><a className="dropdown-item" href="#">Settings</a></li>
+                <li><hr className="dropdown-divider"/></li>
+                <li><a className="dropdown-item" href="/login">Log out</a></li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+            <a className="nav-link" href="/cart"><i className="fa fa-shopping-cart"></i>(0)</a>
+          </li>          
+        </ul>
+      </div>
+    </nav>
   );
 };
 

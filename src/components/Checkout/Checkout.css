@@ -1,73 +1,67 @@
-
-.checkout-form{
-    padding: 0 3rem 0 3rem;
-    display: flex;
-    height: 80vh;
-    margin-top: 4rem;
-      /* scroll */
+.checkout-form {
+  padding: 0 3rem 0 3rem;
+  display: flex;
+  height: 80vh;
+  margin-top: 4rem;
+  /* scroll */
   padding-top: 3rem;
-  background-color: #4D7E3E;
+  background-color: #4d7e3e;
 }
 
-.c-right{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    flex: 1;
+.c-right {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex: 1;
 }
-.c-right h1{
-    color: #F97215;
-}
-
-.c-right>form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    
+.c-right h1 {
+  color: #f97215;
 }
 
-.c-right .user{
-    width: 20rem;
-    height: 2rem;
-    padding: 0.3em;
-    outline: none;
-    border: 2px solid var(--orange);
-    border-radius: 8px;
-    font-size: 16px;   
+.c-right > form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
-textarea{
-    height: 4rem!important;
+.c-right .user {
+  width: 20rem;
+  height: 2rem;
+  padding: 0.3em;
+  outline: none;
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-.c-blur1{
-    top: 1rem;
-    left: 8rem;
+textarea {
+  height: 4rem !important;
 }
-.button{
-    position: center;
-    background-color: #F97215;
-    box-shadow: 0px 20px 24px 3px rgba(251, 212, 40, 0.42);
-    border-radius: 34px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 11px 26px 11px 26px;
-    
-    
+
+.c-blur1 {
+  top: 1rem;
+  left: 8rem;
+}
+.button {
+  position: center;
+  background-color: #f97215;
+  box-shadow: 0px 20px 24px 3px rgba(251, 212, 40, 0.42);
+  border-radius: 34px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 11px 26px 11px 26px;
 }
 
 @media screen and (max-width: 480px) {
-    .contact-form{
-        padding: 0;
-        flex-direction: column;
-        gap: 5rem;
-        height: 40rem;
-    }
-    .c-right .user{
-        width: 16rem;
-    }
-
-}   
+  .contact-form {
+    padding: 0;
+    flex-direction: column;
+    gap: 5rem;
+    height: 40rem;
+  }
+  .c-right .user {
+    width: 16rem;
+  }
+}
