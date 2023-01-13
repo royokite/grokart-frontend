@@ -76,6 +76,7 @@ function SignUp() {
       <button className="btn btn-primary btn-lg position-absolute start-50 translate-middle mt-5 text-warning"
       type="submit">Sign Up</button>
     </form>
+    <a href="/login" className="text-warning position-absolute start-50 translate-middle mt-5">Already have an account? Sign in here!</a>
     </section>
   );
 }
