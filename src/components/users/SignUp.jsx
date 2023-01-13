@@ -14,7 +14,7 @@ function SignUp() {
       return;
     }
 
-    // Perform sign-up logic, e.g. send a request to the server with the username and password
+    // send the username and password to the server
     // and handle the response
     SignUp(username,password)
     .then( response => {
