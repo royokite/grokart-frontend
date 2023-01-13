@@ -27,10 +27,10 @@ function SignUp() {
   return (
     <section className="signin-container">
     <img
-          src="./images/james9876_beautiful_login_page_for_an_online_grocery_website_wh_c635d628-3c57-436e-82f6-6c844b467da4 (1) (1).png"
+          src="./images/access-bg.png"
           className="card-img"
           alt="background"
-          height={1000}
+          style={{height: "100vh"}}
 
         />
     <form onSubmit={handleSubmit} className="form-group
