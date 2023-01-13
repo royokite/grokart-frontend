@@ -34,9 +34,7 @@ function Login() {
         />
         
 
-    <form onSubmit={handleSubmit} className="form-group
-    position-absolute top-50 start-50 translate-middle"
-    >
+    <form onSubmit={handleSubmit} className="form-group position-absolute top-50 start-50 translate-middle">
       <img
           src="./images/gro-kart-logo.png"
           className="card-img mb-5 w-50 position-relative start-50 translate-middle top-0"

@@ -17,9 +17,27 @@
 
 .btn {
   background-color: #4d7e3e !important;
-  width: 75%;
+  /* width: 75%; */
 }
 
 .Checkout {
   background-color: #4d7e3e;
+}
+
+.account-cart {
+  background-color: #4d7e3e;
+  width: 3rem;
+}
+
+.badge {
+  background-color: #f97316;
+}
+
+input[type="search"] {
+  /* background-color: #4d7e3e; */
+  color: #f97316 !important;
+}
+
+hr {
+  border-top: 2px solid #f97316 !important;
 }

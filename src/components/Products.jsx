@@ -43,7 +43,7 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+        <div className="buttons d-flex justify-content-center mb-5">
           <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>ALL</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(1)}>Dairy</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(2)}>Meat</button>
@@ -52,6 +52,7 @@ const Products = () => {
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(5)}>Drinks</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(6)}>Pantry</button>
         </div>
+        <hr />
         {filter.map((product) => {
           return (
             // <>
@@ -60,7 +61,7 @@ const Products = () => {
                   <img src={product.image} className="card-img-top" alt={product.name} height="250px"/>
                   <div className="card-body">
                     <h5 className="card-title mb-0">{product.name}</h5>
-                    <p className="card-text lead fw-bold">
+                    <p className="card-text lead fw-bold" style={{color: "#f97316"}}>
                       Ksh. {product.price}
                     </p>
                     <a href="#" className="btn btn-outline-dark">
@@ -85,6 +86,7 @@ const Products = () => {
           <div className="row justify-content-center">
             {loading ? <Loading /> : <ShowProducts />}
           </div>
+          <hr />
         </div>
       </div>
     </div>

@@ -8,14 +8,27 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="/"><img src="./images/gro-kart-website-favicon-color.png" style={{height: "4rem", width: "auto"}}></img></a>
           </li>
-          <li className="nav-item w-auto">
-            <input type="text"/>
+          <li className="nav-item w-auto search-bar">
+          <div class="row no-gutters w-100">
+            <div class="col px-0">
+                  <input 
+                    className="form-control border-right-0 rounded-0" 
+                    type="search"
+                    placeholder="Search..."
+                  />
+            </div>
+            <div class="col-auto px-0">
+                  <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+            </div>
+          </div>
           </li>
           <li className="nav-item d-flex flex-row mx-5">
             <div className="dropdown">
-              <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              <a className="account-cart btn dropdown-toggle rounded-circle me-2" data-bs-toggle="dropdown">
                 <i className="fa fa-user-circle"></i>
-              </button>
+              </a>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Orders</a></li>
                 <li><a className="dropdown-item" href="#">Settings</a></li>
@@ -23,7 +36,10 @@ const Navbar = () => {
                 <li><a className="dropdown-item" href="/login">Log out</a></li>
               </ul>
             </div>
-            <a className="nav-link" href="/cart"><i className="fa fa-shopping-cart"></i>(0)</a>
+            <a href="/cart" className="account-cart btn position-relative rounded-circle">
+              <i className="fa fa-shopping-cart"></i>
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill">0</span>
+            </a>
           </li>          
         </ul>
       </div>
