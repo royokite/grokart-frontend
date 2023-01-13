@@ -1,4 +1,4 @@
-.main-footer {
+.footer {
     color: rgb(0, 0, 0);
     background-color: #0b411d;
     padding-top: 3em;
@@ -9,3 +9,17 @@
 .tittles{
     color: rgb(160, 187, 4)
 }  
+@media screen and (max-width: 820px) {
+    .footer-links {
+        padding-top: 2rem;
+    }
+
+    .footer-input {
+        display: flex;
+    }
+
+    .button {
+        width: 30%;
+    }
+    }
+    @media screen and (max-width: 768px) {}

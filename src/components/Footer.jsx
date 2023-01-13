@@ -31,7 +31,7 @@ function Footer() {
       }
     }
     return (
-      <div className="main-footer">
+      <div className="footer">
         <div className="container">
           <div className="row">
             {/* Column1 */}
@@ -67,6 +67,10 @@ function Footer() {
           </div>
           <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
+        
+
+        <h3>SIGN UP FOR NEWS AND DEALS!</h3>
+
           Subscribe to receive our best <br></br> deals and get alerted on discounts
         </p>
         
@@ -84,18 +88,20 @@ function Footer() {
        
             />
             <p className='text-succes'>{ Msg}</p>
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline btn-group btn-group-sm'>Subscribe</Button>
           </form>
         </div>
       </section>
           <hr />
+          <div className='tittles'>
+
+          
           <div className="row">
-            <div className='tittles'>
-            <p className="col-sm">
+          <p className="col-sm">
               &copy;{new Date().getFullYear()} Gro-Kart inc | All rights reserved |
               Terms Of Service | Privacy
             </p>
-            </div>
+          </div>
           </div>
         </div>
         
