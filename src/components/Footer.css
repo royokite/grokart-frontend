@@ -1,0 +1,11 @@
+.main-footer {
+    color: rgb(0, 0, 0);
+    background-color: #0b411d;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+.tittles{
+    color: rgb(160, 187, 4)
+}  

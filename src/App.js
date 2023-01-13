@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './components/users/Login';
 import SignUp from './components/users/SignUp';
 import Checkout from './components/Checkout';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <>
           <Navbar/>
           <Home/>
+          <Footer/>
           </>
         }/>
 
