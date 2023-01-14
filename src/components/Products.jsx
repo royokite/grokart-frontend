@@ -49,7 +49,7 @@ const Products = () => {
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(2)}>Meat</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(3)}>Fruits</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(4)}>Vegetables</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(5)}>Drinks</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(5)}>Drink</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(6)}>Pantry</button>
         </div>
         <hr />
