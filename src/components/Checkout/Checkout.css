@@ -1,4 +1,8 @@
-
+.checkout-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .checkout-card {
   width: 47.5%;
   height: 55vh;
@@ -35,9 +39,9 @@ input:focus {
 ​
 #nextBtn {
   padding: 0.35rem 1rem;
-  background-color: rgb(250, 5, 5);
+  background-color: #F97316;
   border: none;
-  color: white;
+  color:  #F97316 ;
   width: 4.5rem;
   cursor: pointer;
 }
