@@ -5,6 +5,7 @@ const Checkout = () => {
   const form = useRef();
 
   return (
+    <div className="checkout-container">
     <div className="checkout-card">
     <h3>Checkout</h3>
     <form>
@@ -27,6 +28,7 @@ const Checkout = () => {
         <button type="button" id="nextBtn">Next</button>
       </div>
     </form>
+  </div>
   </div>
   );
 };
