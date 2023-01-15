@@ -1,0 +1,24 @@
+.user-menu .nav-item svg {
+  display: inline-block;
+  float: right;
+}
+.user-menu .nav-pills .nav-link {
+  margin-bottom: 0.5rem;
+  color: #4d7e3e;
+}
+.user-menu.bg-dark .nav-pills .nav-link:not(.active) {
+  border: 1px solid #4d7e3e;
+  color: #4d7e3e;
+}
+.user-menu.bg-light .nav-pills .nav-link:not(.active) {
+  border: 1px solid #4d7e3e;
+  color: #4d7e3e;
+}
+.user-menu.bg-dark .nav-pills .nav-link.active {
+  background-color: #4d7e3e;
+  color: black;
+}
+.user-menu.bg-light .nav-pills .nav-link.active {
+  background-color: #4d7e3e;
+  color: white;
+}
