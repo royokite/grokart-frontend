@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useCart } from "react-use-cart";
+
 // import Skeleton from "react-loading-skeleton";
 
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  const { addItem } = useCart();
+
   let componentMounted = true;
 
   useEffect(() => {
@@ -64,7 +68,7 @@ const Products = () => {
                     <p className="card-text lead fw-bold" style={{color: "#f97316"}}>
                       Ksh. {product.price}
                     </p>
-                    <a href="#" className="btn btn-outline-dark">
+                    <a className="btn btn-outline-dark" onClick={() => addItem(product)}>
                       Add to Cart
                     </a>
                   </div>

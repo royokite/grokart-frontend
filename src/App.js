@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Login from './components/users/Login';
 import SignUp from './components/users/SignUp';
 import Checkout from './components/Checkout/Checkout.jsx';
+import Cart from './components/cart';
+import { CartProvider } from "react-use-cart";
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
         <Route path="/" element={
           <>
           <Navbar/>
-          <Home/>
+          <CartProvider>
+            <Home/>
+            <Cart/>
+          </CartProvider>
           </>
         }/>
 

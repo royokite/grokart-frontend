@@ -9,17 +9,17 @@ const Navbar = () => {
             <a className="nav-link" href="/"><img src="./images/gro-kart-website-favicon-color.png" style={{height: "4rem", width: "auto"}}></img></a>
           </li>
           <li className="nav-item w-auto search-bar">
-          <div class="row no-gutters w-100">
-            <div class="col px-0">
+          <div className="row no-gutters w-100">
+            <div className="col px-0">
                   <input 
                     className="form-control border-right-0 rounded-0" 
                     type="search"
                     placeholder="Search..."
                   />
             </div>
-            <div class="col-auto px-0">
-                  <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
-                    <i class="fa fa-search"></i>
+            <div className="col-auto px-0">
+                  <button className="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
+                    <i className="fa fa-search"></i>
                   </button>
             </div>
           </div>
