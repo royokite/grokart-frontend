@@ -47,9 +47,9 @@ function App() {
 
   return (
     <BrowserRouter>
-    <CartProvider>
-        <Navbar/>
-        <Routes>
+      <CartProvider>
+          <Navbar/>
+          <Routes>
                 <Route exact path='/' element={
                 <>
                     <Home 
@@ -67,17 +67,14 @@ function App() {
                 </>
                 
                 } 
-                />
-            
-            <Route path="/cart" element={<Cart/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/signup" element={<SignUp/>}/>
-            <Route path="/checkout" element={<Checkout/>}/>
-            <Route path="/my-account" element={<MyAccount/>}/>
-
-    
-        </Routes>
-    </CartProvider>
+                />              
+                <Route path="/cart" element={<Cart/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
+                <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="/my-account" element={<MyAccount/>}/>      
+          </Routes>
+      </CartProvider>
     </BrowserRouter>
    
   );

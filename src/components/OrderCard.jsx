@@ -4,8 +4,8 @@ import { Card, Row, Col, Badge } from 'react-bootstrap';
 const OrderCard = (props) => {
     
     return (
-       <Card className="bg-light-black text-light mb-3">
-            <Card.Header>
+       <Card className="text-light mb-3 border-dark" style={{backgroundColor: "#181a1b"}}>
+            <Card.Header className='border-dark'>
                 <b>{props.orderDate}</b>
                 <small className="float-end">Order ID: {props.orderId}</small>
             </Card.Header>

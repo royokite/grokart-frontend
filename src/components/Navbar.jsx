@@ -5,7 +5,7 @@ const Navbar = () => {
   const { totalItems } = useCart();
 
   return (
-    <nav className="navbar navbar-expand-sm bg-light navbar-light align-middle">
+    <nav className="navbar navbar-expand-sm navbar-dark align-middle" style={{backgroundColor: "#181a1b"}}>
       <div className="container-fluid">
         <ul className="navbar-nav  d-flex justify-content-between align-items-center w-100">
           <li className="nav-item">

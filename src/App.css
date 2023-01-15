@@ -41,3 +41,7 @@ input[type="search"] {
 hr {
   border-top: 2px solid #f97316 !important;
 }
+
+tbody {
+  background-color: #393d40 !important;
+}

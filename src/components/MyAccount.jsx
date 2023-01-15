@@ -12,7 +12,7 @@ const MyAccount = () => {
             <hr />
             <Tab.Container defaultActiveKey="my-orders">
                 <Row className="justify-content-evenly mt-4 p-1">
-                     <Col sm={3} className={"text-black bg-light p-2 rounded h-100 mb-3 user-menu"}>
+                     <Col sm={3} className={"text-white p-2 rounded h-100 mb-3 user-menu"} style={{backgroundColor: "#1c1e1f"}}>
                         <Row className="mb-3 py-2">
                            <Col xs={3} className="pe-0">
                                 <Image
@@ -25,7 +25,7 @@ const MyAccount = () => {
                            </Col> 
                            <Col xs={9} className="pt-1">
                                 <span>Hello,</span>
-                                <h4>Username</h4>
+                                <h4 style={{color: "#f97316"}}>Username</h4>
                            </Col>
                         </Row>
                         <Nav variant="pills" className="flex-column">
@@ -57,10 +57,10 @@ const MyAccount = () => {
                             </Nav.Item>
                         </Nav>
                      </Col>
-                     <Col sm={8} className={"text-black bg-light p-2 rounded"}>
+                     <Col sm={8} className="text-white p-2 rounded" style={{backgroundColor: "#1c1e1f"}}>
                         <Tab.Content>
                             <Tab.Pane eventKey="my-orders">
-                                <h3 className="text-center">My Orders</h3>
+                                <h3 className="text-center text-white">My Orders</h3>
                                 <OrderCard 
                                     orderDate="24 Jun, 2022" 
                                     orderId="1234" 

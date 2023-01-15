@@ -18,13 +18,22 @@ function Cart({ product }) {
   }
 
   return (
-    <section className="py-4 container">
-      <div className="row justify-content-center">
+    <section className="py-4 container" style={{backgroundColor: "#1c1e1f"}}>
+      <div className="row justify-content-center" style={{backgroundColor: "#1c1e1f"}}>
         <div className="col-12">
           <h5>
-            Cart {totalUniqueItems} total Items: ({totalItems})
+            Cart <span className="badge">{totalUniqueItems}</span> - Total Items: <span className="badge">{totalItems}</span>
           </h5>
-          <table className="table table-light table-hover m-0">
+          <table className="table table-dark table-striped table-hover m-0">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
             <tbody>
               {items.map((item, index) => {
                 return (
@@ -32,10 +41,10 @@ function Cart({ product }) {
                     <td>
                       <img src={item.image} style={{ height: "6rem" }} />
                     </td>
-                    <td>{item.title}</td>
+                    <td>{item.name}</td>
                     <td>{item.price}</td>
-                    <td>Quantity : ({item.quantity})</td>
-                    <td>
+                    <td>({item.quantity})</td>
+                    <td className="text-center">
                       <button
                         className="btn btn-info ms-2"
                         onClick={() =>
@@ -65,8 +74,8 @@ function Cart({ product }) {
             </tbody>
           </table>
         </div>
-        <div className="col-auto ms-auto">
-          <h2>Total Price: Ksh. {cartTotal}</h2>
+        <div className="col-auto ms-auto my-2">
+          <h2>Total Price: <span style={{color: "#f97316"}}>Ksh. {cartTotal}</span></h2>
         </div>
         <div className="col-auto">
           <button className="btn btn-danger m-2" onClick={() => emptyCart()}>

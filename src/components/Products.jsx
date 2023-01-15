@@ -18,9 +18,8 @@ const Products = ({ allProducts, filter, loading, setFilter, filterProduct }) =>
     <ProductCard key={product.id} product={product}/>)
   
   return (
-    // <CartProvider>
       <div>
-        <div className="container my-5 py-5">
+        <div className="container my-5 py-5 text-white">
           <div className="row">
             <div className="col-12 mb-5 color: ">
               <h1 className="display-6 fw-bolder text-center">Available Products</h1>
@@ -43,7 +42,6 @@ const Products = ({ allProducts, filter, loading, setFilter, filterProduct }) =>
           </div>
         </div>
       </div>
-    // </CartProvider>
   );
 };
 
