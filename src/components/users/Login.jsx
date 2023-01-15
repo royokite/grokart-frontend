@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
+
+   const handleLogin = () => {
+    fetch("http://127.0.0.1:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("token", data.jwt);
+        navigate('/home')
+      })
+      .catch((err) => console.log(err));
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // fetch('/api/sign-in', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ username, password }),
-    //   headers: { 'Content-Type': 'application/json' },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.success) {
-    //       // Sign in succeeded, navigate to the homepage
-    //       window.location.href = '/';
-    //     } else {
-    //       // Sign in failed, show an error message
-    //       alert('Incorrect username or password.');
-    //     }
-    //   });
+    handleLogin();
   };
 
   return (
