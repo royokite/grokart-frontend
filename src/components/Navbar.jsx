@@ -33,8 +33,7 @@ const Navbar = () => {
                 <i className="fa fa-user-circle"></i>
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Orders</a></li>
-                <li><a className="dropdown-item" href="#">Settings</a></li>
+                <li><a className="dropdown-item" href="/my-account">My Account</a></li>
                 <li><hr className="dropdown-divider"/></li>
                 <li><a className="dropdown-item" href="/login">Log out</a></li>
               </ul>
