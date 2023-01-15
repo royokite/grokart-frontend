@@ -1,6 +1,9 @@
 import React from "react";
+import { useCart } from "react-use-cart";
 
 const Navbar = () => {
+  const { totalItems } = useCart();
+
   return (
     <nav className="navbar navbar-expand-sm bg-light navbar-light align-middle">
       <div className="container-fluid">
@@ -38,7 +41,7 @@ const Navbar = () => {
             </div>
             <a href="/cart" className="account-cart btn position-relative rounded-circle">
               <i className="fa fa-shopping-cart"></i>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill">0</span>
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill">{totalItems}</span>
             </a>
           </li>          
         </ul>

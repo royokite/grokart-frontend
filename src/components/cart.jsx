@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "react-use-cart";
 
-function Cart(props) {
+function Cart({ product }) {
   const {
     isEmpty,
     totalUniqueItems,
@@ -12,9 +12,11 @@ function Cart(props) {
     removeItem,
     emptyCart,
   } = useCart();
+
   if (isEmpty) {
-    return <h1 className="text-center">your cart is empty</h1>;
+    return <h1 className="text-center">Your cart is empty</h1>;
   }
+
   return (
     <section className="py-4 container">
       <div className="row justify-content-center">
@@ -70,7 +72,7 @@ function Cart(props) {
           <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
             Clear Cart
           </button>
-          <button className="btn btn-primary m-2">Checkout</button>
+          <button className="btn btn-primary m-2" onClick={() => console.log(items)}>Checkout</button>
         </div>
       </div>
     </section>
