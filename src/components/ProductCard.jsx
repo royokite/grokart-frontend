@@ -1,15 +1,16 @@
 import React from "react";
 import { useCart } from "react-use-cart";
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
     const { addItem, items } = useCart();
+    const [isAdded, setIsAdded] = useState(false);
 
     const addToCart = () =>{
         addItem(product);
-        console.log(items   )
-    }
-    const MyComponent = () => {
-        const [isAdded, setIsAdded] = useState(false);
+        console.log(items)
+    };
+
       
         const handleClick = () => {
           setIsAdded(true);
@@ -32,6 +33,5 @@ const ProductCard = ({ product }) => {
                 </div>
             </div>
     );
-};
 };
 export default ProductCard;
