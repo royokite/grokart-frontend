@@ -78,6 +78,31 @@ const MyAccount = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="account-details">
                                 <h3>Account details</h3>
+                                              
+                
+                  <input name='Username'  label='Username' placeholder='Username' width={6} />
+                  <input label='Username'  width={10}  />
+               
+
+               
+                  <input name='given_name' label='First name' placeholder='First Name' width={6} />
+                  <input name='middle_name'  label='Middle Name' placeholder='Middle Name' width={4}  />
+                  <input name='family_name'  label='Last Name' placeholder='Last Name' width={6}  />
+               
+                
+             
+                  <input name='birthdate'  label='Birthday' placeholder='02/02/2002' width={4} />
+                  
+           
+
+               
+                  <input name='phone_number'  label='Mobile number'  placeholder='+254 700 000' width={6}  />
+                  <input name='website'  label='Website' placeholder='www.mywebsite.com' width={10} />
+                
+              
+                  <input name='address'  label='Address' placeholder='2/77 New Street, Redport 3015-0200 Nairobi, Kenya ' width={16}  />
+             
+
                             </Tab.Pane>
                             <Tab.Pane eventKey="address">
                                 <h3>Address</h3>
