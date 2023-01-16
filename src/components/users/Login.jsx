@@ -51,30 +51,34 @@ function Login() {
           width={50}
           />
       <label >
-        <input className="form-control mb-5 text-warning form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
+        <input className="form-control mb-5 form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
           type="text"
           placeholder='Username'
           value={username}
           onChange={(event) => setUsername(event.target.value)}
+          id = "form-control"
         />
       </label>
       <br />
       <label>
-        <input className="form-control mb-5 text-warning pl-3 form-control-lg mt-5
+        <input className="form-control mb-5 pl-3 form-control-lg mt-5
         "
           type="password"
           placeholder='Password'
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          id = "form-control"
         />
       </label>
       <br />
-      <button className="btn btn-primary btn-lg position-absolute start-50 translate-middle mt-5 text-warning"
-      type="submit">Sign In</button>
+      <button className="btn position-absolute start-50 translate-middle mt-5"
+      type="submit"
+      id = "loginbtn"
+      >Sign In</button>
       
       
     </form>
-    <a href="/signup" className="text-warning position-absolute start-50 translate-middle mt-5">Don't have an account? Sign up here!</a>
+    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5">Don't have an account? Sign up here!</a>
     </section>
 
 

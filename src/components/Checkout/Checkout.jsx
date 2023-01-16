@@ -5,44 +5,32 @@ const Checkout = () => {
   const form = useRef();
 
   return (
-    <div className="checkout-form" id="checkout">
-      {/* left side copy and paste from work section */}
-      <div className="w-left"></div>
-      {/* right side form */}
-      <div className="c-right">
-        <form ref={form}>
-          <h1>Checkout</h1>
-          <input
-            type="text"
-            name="user_name"
-            className="user"
-            placeholder="Name"
-          />
-          <input
-            type="email"
-            name="user_email"
-            className="user"
-            placeholder="Email"
-          />
-          <input
-            type="text"
-            name="user_email"
-            className="user"
-            placeholder="Address"
-          />
-          <input
-            type="text"
-            name="user_email"
-            className="user"
-            placeholder="City"
-          />
-          <input type="submit" value="Send" className="button" />
-          <div></div>
-          <span>{"Thank you for Contacting me"}</span>
-        </form>
+    <div className="checkout-container">
+    <div className="checkout-card">
+    <h3 className="checkout-title">Checkout</h3>
+    <form>
+      <div className="card-row">
+        <input type="text" id="firstName" placeholder="Name" />
+        <input type="text" id="secondName" placeholder="Surname" />
       </div>
-    </div>
+      <div className="card-row">
+        <input type="text" id="checkout-email" placeholder="Email" />
+        <input type="text" id="checkout-city" placeholder="City" />
+      </div>
+      <div className="card-address">
+        <input type="text" placeholder="Address" id="address" />
+      </div>
+      <div className="card-row">
+        <input type="text" id="card-postal" placeholder="Postal Code" />
+        <input type="text" id="card-phone" placeholder="Phone Number" />
+      </div>
+      <div className="btn-container" >
+        <button type= "submit" className="btn btn-primary btn-lg btn-block checkout-btn"
+         id="nextBtn">Next</button>
+      </div>
+    </form>
+  </div>
+  </div>
   );
 };
-
 export default Checkout;

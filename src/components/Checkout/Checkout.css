@@ -1,67 +1,77 @@
-.checkout-form {
-  padding: 0 3rem 0 3rem;
-  display: flex;
-  height: 80vh;
-  margin-top: 4rem;
-  /* scroll */
-  padding-top: 3rem;
-  background-color: #4d7e3e;
-}
-
-.c-right {
+.checkout-container{
   display: flex;
   justify-content: center;
-  position: relative;
-  flex: 1;
-}
-.c-right h1 {
-  color: #f97215;
-}
-
-.c-right > form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   align-items: center;
 }
-
-.c-right .user {
-  width: 20rem;
+.checkout-card {
+  width: 47.5%;
+  height: 55vh;
+  background-color: rgb(19, 121, 19);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+input {
   height: 2rem;
-  padding: 0.3em;
-  outline: none;
-  border: 2px solid var(--orange);
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-textarea {
-  height: 4rem !important;
-}
-
-.c-blur1 {
-  top: 1rem;
-  left: 8rem;
-}
-.button {
-  position: center;
-  background-color: #f97215;
-  box-shadow: 0px 20px 24px 3px rgba(251, 212, 40, 0.42);
-  border-radius: 34px;
+  background-color: transparent;
   border: none;
-  color: white;
-  font-size: 16px;
-  padding: 11px 26px 11px 26px;
+  border-bottom: 1px solid rgb(250, 216, 187);
+  font-weight: bold;
+  color: rgb(235, 153, 82);
+}
+​
+input:focus {
+  outline: none;
+}
+​
+.card-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+​
+#address {
+  width: 100%;
+  margin-top: 50rem;
 }
 
-@media screen and (max-width: 480px) {
-  .contact-form {
-    padding: 0;
-    flex-direction: column;
-    gap: 5rem;
-    height: 40rem;
-  }
-  .c-right .user {
-    width: 16rem;
-  }
+​
+#nextBtn {
+  padding: 0.35rem 1rem !important;
+  background-color: #F97316 !important;
+  border: none !important;
+  color:  #ffffff !important;
+  width: 4.5rem !important;
+  cursor: pointer !important;
+}
+.btn-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 2rem;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CBB4B4;
+}
+
+.secondName {
+  margin-top: 2rem !important;
+  padding: 0.5rem 0.5rem;
+}
+
+.checkout-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #F97316 !important;
+  color:  #ffffff !important;
+  border: none !important;
+  
 }
