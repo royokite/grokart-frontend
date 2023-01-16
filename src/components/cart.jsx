@@ -17,6 +17,7 @@ function Cart({ product }) {
     return <h1 className="text-center">Your cart is empty</h1>;
   }
 
+  
   return (
     <section className="py-4 container" style={{backgroundColor: "#1c1e1f"}}>
       <div className="row justify-content-center" style={{backgroundColor: "#1c1e1f"}}>
