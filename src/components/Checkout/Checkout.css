@@ -30,23 +30,48 @@ input:focus {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 ​
 #address {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 50rem;
 }
+
 ​
 #nextBtn {
-  padding: 0.35rem 1rem;
-  background-color: #F97316;
-  border: none;
-  color:  #F97316 ;
-  width: 4.5rem;
-  cursor: pointer;
+  padding: 0.35rem 1rem !important;
+  background-color: #F97316 !important;
+  border: none !important;
+  color:  #ffffff !important;
+  width: 4.5rem !important;
+  cursor: pointer !important;
 }
 .btn-container {
   display: flex;
   justify-content: end;
   margin-top: 2rem;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CBB4B4;
+}
+
+.secondName {
+  margin-top: 2rem !important;
+  padding: 0.5rem 0.5rem;
+}
+
+.checkout-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #F97316 !important;
+  color:  #ffffff !important;
+  border: none !important;
+  
 }

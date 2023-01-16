@@ -7,7 +7,7 @@ const Checkout = () => {
   return (
     <div className="checkout-container">
     <div className="checkout-card">
-    <h3>Checkout</h3>
+    <h3 className="checkout-title">Checkout</h3>
     <form>
       <div className="card-row">
         <input type="text" id="firstName" placeholder="Name" />
@@ -24,8 +24,9 @@ const Checkout = () => {
         <input type="text" id="card-postal" placeholder="Postal Code" />
         <input type="text" id="card-phone" placeholder="Phone Number" />
       </div>
-      <div className="btn-container">
-        <button type="button" id="nextBtn">Next</button>
+      <div className="btn-container" >
+        <button type= "submit" className="btn btn-primary btn-lg btn-block checkout-btn"
+         id="nextBtn">Next</button>
       </div>
     </form>
   </div>
