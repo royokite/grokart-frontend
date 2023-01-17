@@ -3,8 +3,6 @@ import ProductCard from "./ProductCard";
 import { CartProvider, useCart } from "react-use-cart";
 import Cart from "./cart";
 
-
-
 const Products = ({
   allProducts,
   filter,
@@ -17,28 +15,35 @@ const Products = ({
   };
   const filterByName = () => {
     const name = document.getElementById("productName").value;
-    const filteredProducts = allProducts.filter(product => product.name.toLowerCase().includes(name.toLowerCase()));
+    const filteredProducts = allProducts.filter((product) =>
+      product.name.toLowerCase().includes(name.toLowerCase())
+    );
     setFilter(filteredProducts);
-  }
+  };
 
   const renderProducts = filter.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
 
-
-const filterByProduct = (category) => {
-  let filteredProducts;
-  const name = document.getElementById("productName").value;
-  if(category){
-    filteredProducts = allProducts.filter(product => product.category_id === category && product.name.toLowerCase().includes(name.toLowerCase()));
-  }else{
-    filteredProducts = allProducts.filter(product => product.name.toLowerCase().includes(name.toLowerCase()));
-  }
-  setFilter(filteredProducts);
-}
+  const filterByProduct = (category) => {
+    let filteredProducts;
+    const name = document.getElementById("productName").value;
+    if (category) {
+      filteredProducts = allProducts.filter(
+        (product) =>
+          product.category_id === category &&
+          product.name.toLowerCase().includes(name.toLowerCase())
+      );
+    } else {
+      filteredProducts = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(name.toLowerCase())
+      );
+    }
+    setFilter(filteredProducts);
+  };
 
   return (
-    <div>
+    <div className="container-fluid">
       <div className="d-flex justify-content-center mb-5">
         <input
           className="form-control"
@@ -103,8 +108,10 @@ const filterByProduct = (category) => {
             </button>
           </div>
           <hr />
+          <div className="row justify-content-center product-row">
           <div className="row justify-content-center">
             {loading ? <Loading /> : renderProducts}
+          </div>
           </div>
           <hr />
         </div>
