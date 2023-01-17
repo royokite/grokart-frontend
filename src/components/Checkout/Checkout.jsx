@@ -9,18 +9,21 @@ const Checkout = () => {
     <div className="checkout-card">
     <h3 className="checkout-heading ">Checkout</h3>
     <form>
-      <div className="card-row">
+      <div className="card-row mb-1.5">
         <input type="text" id="firstName" placeholder="Name" />
         <input type="text" id="secondName" placeholder="Surname" />
       </div>
-      <div className="card-row">
+      <br/>
+      <div className="card-row mb-1.5">
         <input type="text" id="checkout-email" placeholder="Email" />
         <input type="text" id="checkout-city" placeholder="City" />
       </div>
-      <div className="card-address">
+      <br/>
+      <div className="card-address mb-1.5">
         <input type="text" placeholder="Address" id="address" />
       </div>
-      <div className="card-row">
+      <br/>
+      <div className="card-row mb-1.5">
         <input type="text" id="card-postal" placeholder="Postal Code" />
         <input type="text" id="card-phone" placeholder="Phone Number" />
       </div>
