@@ -72,7 +72,8 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/checkout" element={<Checkout/>}/>
-                <Route path="/my-account" element={<MyAccount/>}/>      
+                <Route path="/my-account" element={<MyAccount/>}/>   
+   
           </Routes>
       </CartProvider>
     </BrowserRouter>
