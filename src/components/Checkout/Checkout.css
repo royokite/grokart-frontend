@@ -20,7 +20,7 @@ input {
   border: none;
   border-bottom: 1px solid rgb(250, 216, 187);
   font-weight: bold;
-  color: rgb(235, 153, 82);
+  color: aliceblue;
 }
 ​
 input:focus {
