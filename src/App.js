@@ -48,10 +48,10 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-          <Navbar/>
           <Routes>
                 <Route exact path='/' element={
                 <>
+                   <Navbar/>
                     <Home 
                         allProducts={allProducts} setAllProducts={setAllProducts}
                         filter={filter} setFilter={setFilter}
