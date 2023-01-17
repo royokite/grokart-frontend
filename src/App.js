@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { CartProvider, useCart } from "react-use-cart";
+
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -24,6 +25,7 @@ function App() {
       const response = await fetch("http://localhost:5000/products");
       const json = await response.json();
       if (componentMounted) {
+       
         setAllProducts(json);
         setFilter(json);
         setLoading(false);

@@ -36,7 +36,7 @@ const Navbar = () => {
               ></img>
             </a>
           </li>
-          <li className="nav-item w-auto search-bar">
+          {/* <li className="nav-item w-auto search-bar">
             <Form inline onSubmit={handleSubmit}>
               <FormControl
                 type="text"
@@ -46,7 +46,7 @@ const Navbar = () => {
                 onChange={handleChange}
               />
             </Form>
-          </li>
+          </li> */}
           <li className="nav-item d-flex flex-row mx-5">
             <div className="dropdown">
               <a

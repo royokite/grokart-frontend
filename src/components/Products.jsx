@@ -2,6 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { CartProvider, useCart } from "react-use-cart";
 import Cart from "./cart";
+import './Searchbar/search'
 
 const Products = ({ allProducts, filter, loading, setFilter, filterProduct }) => {
 
@@ -25,6 +26,7 @@ const Products = ({ allProducts, filter, loading, setFilter, filterProduct }) =>
               <h1 className="display-6 fw-bolder text-center">Available Products</h1>
               <hr />
             </div>
+            
             <div className="buttons d-flex justify-content-center mb-5">
               <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(allProducts)}>ALL</button>
               <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct(1)}>Dairy</button>
