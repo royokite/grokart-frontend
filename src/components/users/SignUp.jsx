@@ -112,7 +112,7 @@ function SignUp() {
       </form>
       <a
         href="/login"
-        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5" id="login-button"
+        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4" id="login-button"
       >
         Already have an account? Sign in here!
       </a>

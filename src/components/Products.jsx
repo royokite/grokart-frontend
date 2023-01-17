@@ -44,17 +44,6 @@ const Products = ({
 
   return (
     <div className="container-fluid">
-      <div className="d-flex justify-content-center mb-5">
-        <input
-          className="form-control"
-          type="text"
-          id="productName"
-          placeholder="Enter product name"
-        />
-        <button className="btn btn-outline-dark me-2" onClick={filterByName}>
-          Search
-        </button>
-      </div>
       <div className="container my-5 py-5 text-white">
         <div className="row">
           <div className="col-12 mb-5 color: ">
@@ -62,8 +51,23 @@ const Products = ({
               Available Products
             </h1>
             <hr />
+            <div className="d-flex justify-content-center">
+              <input
+                className="form-control me-2 w-25 text-center text-dark fw-bold border-0 bg-light rounded-pill shadow-sm text-center"
+                id="productName"
+                type="text"
+                id="productName"
+                placeholder="Enter product name"
+              />
+              <button
+                className="btn btn-outline-dark me-2 rounded-pill shadow-sm text-center"
+                onClick={filterByName}
+              >
+                Search
+              </button>
+            </div>
           </div>
-          <div className="buttons d-flex justify-content-center mb-5">
+          <div className="buttons d-flex justify-content-center mb-2">
             <button
               className="btn btn-outline-dark me-2"
               onClick={() => setFilter(allProducts)}
@@ -109,9 +113,9 @@ const Products = ({
           </div>
           <hr />
           <div className="row justify-content-center product-row">
-          <div className="row justify-content-center">
-            {loading ? <Loading /> : renderProducts}
-          </div>
+            <div className="row justify-content-center">
+              {loading ? <Loading /> : renderProducts}
+            </div>
           </div>
           <hr />
         </div>

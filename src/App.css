@@ -90,6 +90,21 @@ input.form-control::-webkit-input-placeholder {
   width: 20%;
 }
 
+#productName {
+  background: transparent !important;
+  border: 1px solid #fdf5ef !important;
+  color: aliceblue !important;
+  height: 45px;
+
+
+}
+
+input.productName::-webkit-input-placeholder {
+  color: aliceblue !important;
+}
+
+
+
 
 
 
