@@ -10,6 +10,7 @@ import Checkout from './components/Checkout/Checkout.jsx';
 import Cart from './components/cart';
 import Products from './components/Products';
 import MyAccount from './components/MyAccount';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -49,6 +50,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
           <Navbar/>
+          
           <Routes>
                 <Route exact path='/' element={
                 <>
@@ -75,8 +77,10 @@ function App() {
                 <Route path="/my-account" element={<MyAccount/>}/>   
    
           </Routes>
+          <Footer />
       </CartProvider>
     </BrowserRouter>
+    
    
   );
 }
