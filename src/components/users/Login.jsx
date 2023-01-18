@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [userRole, setUserRole] = useState('');
   const navigate = useNavigate()
 
    const handleLogin = () => {
@@ -20,7 +21,8 @@ function Login() {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("token", data.jwt);
-        navigate('/home')
+        setUserRole(data.role);
+        navigate(userRole === 'admin' ? '/admin' : '/cart')
       })
       .catch((err) => console.log(err));
   };
@@ -81,4 +83,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login

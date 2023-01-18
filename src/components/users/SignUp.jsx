@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [userRole, setUserRole] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [error, setError] = useState(null);
 
@@ -18,6 +19,7 @@ function SignUp() {
       body: JSON.stringify({
         username,
         password,
+        userRole,
       }),
     })
       .then((res) => res.json())
@@ -68,47 +70,59 @@ function SignUp() {
         />
         <label>
           <input
-            className="form-control mb-5 text-warning form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
+            className="form-control mb-5 form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
             type="text"
             placeholder="Username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+            id = "form-control"
           />
+        </label>
+        <label>
+          <select
+            className="form-control mb-5 form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
+            value={userRole}
+            onChange={(event) => setUserRole(event.target.value)}
+            id="form-control">
+            <option value="" disabled>Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
         </label>
         <br />
         <label>
           <input
-            className="form-control mb-5 text-warning form-control-lg mt-5
-        "
+            className="form-control mb-5 form-control-lg mt-5"
             placeholder="Password"
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            id = "form-control"
           />
         </label>
         <br />
         <label>
           <input
-            className="form-control mb-5 text-warning pl-3 form-control-lg
-        "
+            className="form-control mb-5 pl-3 form-control-lg"
             placeholder="Confirm password"
             type="password"
             value={passwordConfirmation}
             onChange={(event) => setPasswordConfirmation(event.target.value)}
-          />
+            id = "form-control"/>
         </label>
         <br />
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button
-          className="btn btn-primary btn-lg position-absolute start-50 translate-middle mt-5 text-warning"
+          className="btn position-absolute start-50 translate-middle mt-5"
           type="submit"
-        >
+          id = "loginbtn"
+          >
           Sign Up
         </button>
       </form>
       <a
         href="/login"
-        className="text-warning position-absolute start-50 translate-middle mt-5"
+        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5" id="login-button"
       >
         Already have an account? Sign in here!
       </a>
