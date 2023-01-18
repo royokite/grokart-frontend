@@ -58,7 +58,7 @@ function Login() {
       >Sign In</button>
       {error && <div className="error">{error}</div>}      
     </form>    
-    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4">Don't have an account? Sign up here!</a>
+    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4">Don't have an account? <strong>Sign up here!</strong></a>
     </section>
 
 

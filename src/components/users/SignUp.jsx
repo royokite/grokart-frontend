@@ -91,7 +91,7 @@ function SignUp() {
         href="/login"
         className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4" id="login-button"
       >
-        Already have an account? Sign in here!
+        Already have an account? <strong>Sign in here!</strong>
       </a>
     </section>
   );
