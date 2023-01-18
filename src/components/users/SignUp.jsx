@@ -52,7 +52,8 @@ function SignUp() {
     <section className="signin-container">
       <img
         src="./images/access-bg.png"
-        className="card-img"
+        className="card-img cover-fit
+        "
         alt="background"
         style={{ height: "100vh" }}
       />
@@ -62,11 +63,11 @@ function SignUp() {
     position-absolute top-50 start-50 translate-middle"
       >
         <img
-          src="./images/gro-kart-logo.png"
+          src="./images/WhatsApp_Image_2023-01-06_at_3.57.54_PM__1_-removebg-preview.png"
           className="card-img mb-5 w-50 position-relative start-50 translate-middle top-0"
           alt="banner"
-          height={100}
-          width={50}
+          height={120}
+          
         />
         <label>
           <input
@@ -92,7 +93,7 @@ function SignUp() {
         <br />
         <label>
           <input
-            className="form-control mb-5 text-warning form-control-lg mt-5
+            className="form-control mb-5 form-control-lg mt-5
         "
             placeholder="Password"
             type="password"
@@ -124,7 +125,7 @@ function SignUp() {
       </form>
       <a
         href="/login"
-        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5" id="login-button"
+        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4" id="login-button"
       >
         Already have an account? Sign in here!
       </a>

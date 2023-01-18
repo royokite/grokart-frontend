@@ -86,84 +86,27 @@ input.form-control::-webkit-input-placeholder {
   }
 }
 
+.product-row .product-card {
+  width: 20%;
+}
+
+#productName {
+  background: transparent !important;
+  border: 1px solid #fdf5ef !important;
+  color: aliceblue !important;
+  height: 45px;
+
+
+}
+
+input.productName::-webkit-input-placeholder {
+  color: aliceblue !important;
+}
 
 
 
-/* username 
-
-position: absolute;
-width: 382px;
-height: 61.96px;
-left: 449px;
-top: 279px;
 
 
 
-/* Rectangle 
 
-box-sizing: border-box;
-
-position: absolute;
-width: 382px;
-height: 61.96px;
-left: 449px;
-top: 279px;
-
-border: 1px solid #FFFFFF;
-border-radius: 4px;
-
-
-/* Username 
-
-position: absolute;
-width: 106.96px;
-height: 27.54px;
-left: 513.94px;
-top: 296.9px;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 300;
-font-size: 14px;
-line-height: 20px;
-/* or 143% 
-text-align: center;
-text-transform: uppercase;
-
-color: #FFFFFF;
-
-
-
-/* user 
-
-position: absolute;
-width: 25.47px;
-height: 27.54px;
-left: 464.28px;
-top: 296.9px;
-
-
-
-/* Vector 
-
-position: absolute;
-left: 16.67%;
-right: 16.67%;
-top: 62.5%;
-bottom: 12.5%;
-
-border: 1px solid #FFFFFF;
-
-
-/* Vector 
-
-position: absolute;
-left: 33.33%;
-right: 33.33%;
-top: 12.5%;
-bottom: 54.17%;
-
-border: 1px solid #FFFFFF;
-
-*/
 
