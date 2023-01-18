@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { CartProvider, useCart } from "react-use-cart";
+
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -10,6 +11,7 @@ import Checkout from './components/Checkout/Checkout.jsx';
 import Cart from './components/cart';
 import Products from './components/Products';
 import MyAccount from './components/MyAccount';
+import Footer from './components/Footer';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -24,6 +26,7 @@ function App() {
       const response = await fetch("http://localhost:5000/products");
       const json = await response.json();
       if (componentMounted) {
+       
         setAllProducts(json);
         setFilter(json);
         setLoading(false);
@@ -48,10 +51,10 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-          <Navbar/>
           <Routes>
                 <Route exact path='/' element={
                 <>
+                   <Navbar/>
                     <Home 
                         allProducts={allProducts} setAllProducts={setAllProducts}
                         filter={filter} setFilter={setFilter}
@@ -64,6 +67,8 @@ function App() {
                         loading={loading} setLoading={setLoading}
                         filterProduct={filterProduct}
                     />
+                    <Footer/>
+                    
                 </>
                 
                 } 

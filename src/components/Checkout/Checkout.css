@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 9%;
 }
 .checkout-card {
   width: 47.5%;
@@ -19,7 +20,7 @@ input {
   border: none;
   border-bottom: 1px solid rgb(250, 216, 187);
   font-weight: bold;
-  color: rgb(235, 153, 82);
+  color: aliceblue;
 }
 ​
 input:focus {
@@ -67,6 +68,10 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-weight: bold;
   color: #000000;
   margin-bottom: 1rem;
+}
+.checkout-heading {
+  color: #F97316;
+
 }
 
 .btn-primary {
