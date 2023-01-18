@@ -92,7 +92,8 @@ function SignUp() {
         <br />
         <label>
           <input
-            className="form-control mb-5 form-control-lg mt-5"
+            className="form-control mb-5 text-warning form-control-lg mt-5
+        "
             placeholder="Password"
             type="password"
             value={password}
@@ -103,12 +104,13 @@ function SignUp() {
         <br />
         <label>
           <input
-            className="form-control mb-5 pl-3 form-control-lg"
+            className="form-control mb-5 text-warning pl-3 form-control-lg
+        "
             placeholder="Confirm password"
             type="password"
             value={passwordConfirmation}
             onChange={(event) => setPasswordConfirmation(event.target.value)}
-            id = "form-control"/>
+          />
         </label>
         <br />
         {error && <p style={{ color: "red" }}>{error}</p>}
