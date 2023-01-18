@@ -1,25 +1,18 @@
 import React from "react";
 import { useCart } from "react-use-cart";
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { totalItems } = useCart();
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+  const navigate = useNavigate()
 
-  const [searchTerm, setSearchTerm] = React.useState("");
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    window.location.href = `/search/${searchTerm}`;
-  };
-
-
-
-
-  
+  const handleClick = () => {
+    logout()
+  }  
 
   return (
     <nav
@@ -33,41 +26,40 @@ const Navbar = () => {
               <img
                 src="./images/gro-kart-website-favicon-color.png"
                 style={{ height: "4rem", width: "auto" }}
+                alt="App logo"
               ></img>
             </a>
           </li>
-          {/* <li className="nav-item w-auto search-bar">
-            <Form inline onSubmit={handleSubmit}>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-                value={searchTerm}
-                onChange={handleChange}
-              />
-            </Form>
-          </li> */}
           <li className="nav-item d-flex flex-row mx-5">
+            {user && (
+              <div className="d-flex">
+                <span>Hi,</span>
+                <span>{user.user.username}</span>
+              </div>
+            )}
             <div className="dropdown">
-              <a
+              <span
                 className="account-cart btn dropdown-toggle rounded-circle me-2"
                 data-bs-toggle="dropdown"
               >
                 <i className="fa fa-user-circle"></i>
-              </a>
+              </span>
               <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="/my-account">
-                    My Account
-                  </a>
-                </li>
+                { user && 
+                  <li>
+                    <a className="dropdown-item" href="/my-account">
+                      My Account
+                    </a>
+                  </li>
+                }
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/login">
-                    Log out
-                  </a>
+                  { user ? 
+                    <button className="btn dropdown-item" onClick={handleClick}>Log out</button> : 
+                    <button className="btn dropdown-item" onClick={() => navigate("/login")}>Log In</button>
+                  }
                 </li>
               </ul>
             </div>

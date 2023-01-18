@@ -5,7 +5,6 @@ import { Alert } from "react-bootstrap";
 
 const ProductCard = ({ product }) => {
   const { addItem, items } = useCart();
-  const [isAdded, setIsAdded] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
   const addToCart = () => {
@@ -14,7 +13,6 @@ const ProductCard = ({ product }) => {
   };
 
   const handleClick = () => {
-    setIsAdded(true);
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);

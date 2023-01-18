@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import { CartProvider, useCart } from "react-use-cart";
+import { CartProvider } from "react-use-cart";
 
 import './App.css';
 import Home from './components/Home';
@@ -30,7 +30,7 @@ function App() {
         setAllProducts(json);
         setFilter(json);
         setLoading(false);
-        console.log(json);
+        // console.log(json);
       }
       return () => {
         componentMounted = false;
