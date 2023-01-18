@@ -1,8 +1,14 @@
 import React from "react";
 import { useCart } from "react-use-cart";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
     const { totalItems, items, cartTotal } = useCart()
+    const navigate = useNavigate()
+
+    const handlePayment = () => {
+      console.log("Mpesa STK goes here")
+    }
 
     return (
         <div class="container w-75">
@@ -29,7 +35,8 @@ const Checkout = () => {
                     </li>
                   );
                 })}
-                <li class="list-group-item d-flex justify-content-between text-success">
+                <hr />
+                <li class="list-group-item d-flex justify-content-between text-success fs-3">
                   <span>Total (KES)</span>
                   <strong>{cartTotal}</strong>
                 </li>
@@ -37,7 +44,7 @@ const Checkout = () => {
 
             </div>
             <div class="col-md-8 order-md-1">
-              <h4 class="mb-3">Billing address</h4>
+              <h4 class="mb-3">Shipping address</h4>
               <form class="needs-validation" novalidate>
                 <div class="row">
                   <div class="col-md-6 mb-3">
@@ -70,7 +77,7 @@ const Checkout = () => {
                 </div>
 
                 <div class="mb-3">
-                  <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                  <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" placeholder="you@example.com" />
                   <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
@@ -101,7 +108,26 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" type="button">Make Payment</button>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <button 
+                      class="btn btn-primary btn-lg btn-block" 
+                      type="button"
+                      onClick={() => navigate("/")}
+                    >
+                      Continue Shopping
+                    </button>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <button 
+                      class="btn btn-primary btn-lg btn-block" 
+                      type="button"
+                      onClick={() => handlePayment()} 
+                    >
+                      Make Payment
+                    </button> 
+                  </div>
+                </div>
                 <hr class="mb-4" />
               </form>
             </div>

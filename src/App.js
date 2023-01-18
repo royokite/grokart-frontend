@@ -7,8 +7,8 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Login from './components/users/Login';
 import SignUp from './components/users/SignUp';
-import Checkout from './components/Checkout/Checkout.jsx';
-import Cart from './components/cart';
+import Checkout from './components/Checkout.jsx';
+import Cart from './components/Cart';
 import Products from './components/Products';
 import MyAccount from './components/MyAccount';
 import Footer from './components/Footer';
@@ -73,11 +73,11 @@ function App() {
                 
                 } 
                 />              
-                <Route path="/cart" element={<Cart/>}/>
+                <Route path="/cart" element={<><Navbar/><Cart/></>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
-                <Route path="/checkout" element={<Checkout/>}/>
-                <Route path="/my-account" element={<MyAccount/>}/>      
+                <Route path="/checkout" element={<><Navbar/><Checkout/></>}/>
+                <Route path="/my-account" element={<><Navbar/><MyAccount/></>}/>      
           </Routes>
       </CartProvider>
     </BrowserRouter>

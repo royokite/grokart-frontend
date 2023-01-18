@@ -7,7 +7,7 @@ function Login() {
   const navigate = useNavigate()
 
    const handleLogin = () => {
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("http://127.0.0.1:5000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +20,7 @@ function Login() {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("token", data.jwt);
-        navigate('/home')
+        navigate('/')
       })
       .catch((err) => console.log(err));
   };

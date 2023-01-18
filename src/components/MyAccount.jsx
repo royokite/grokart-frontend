@@ -42,12 +42,6 @@ const MyAccount = () => {
                                         <i className="fa fa-cogs"></i>
                                     </span>
                                 </Nav.Link>
-                                <Nav.Link eventKey="address" className="position-relative">
-                                    Address
-                                    <span className="position-absolute top-50 end-0 translate-middle-y mx-3">
-                                        <i className="fa fa-address-card"></i>
-                                    </span>
-                                </Nav.Link>
                                 <Nav.Link href="/login" className="position-relative">
                                     Log out
                                     <span className="position-absolute top-50 end-0 translate-middle-y mx-3">
@@ -77,32 +71,42 @@ const MyAccount = () => {
                                 />
                             </Tab.Pane>
                             <Tab.Pane eventKey="account-details">
-                                <h3>Account details</h3>
-                                              
-                
-                  <input name='Username'  label='Username' placeholder='Username' width={6} />
-                  <input label='Username'  width={10}  />
-               
+                            <h3>Account details</h3>
+                            <hr />
+                            <div>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName">First name</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName">Last name</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                                        </div>
+                                    </div>
 
-               
-                  <input name='given_name' label='First name' placeholder='First Name' width={6} />
-                  <input name='middle_name'  label='Middle Name' placeholder='Middle Name' width={4}  />
-                  <input name='family_name'  label='Last Name' placeholder='Last Name' width={6}  />
-               
-                
-             
-                  <input name='birthdate'  label='Birthday' placeholder='02/02/2002' width={4} />
-                  
-           
+                                    <div class="mb-3">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">@</span>
+                                            </div>
+                                            <input type="text" class="form-control" id="username" placeholder="Username" required />
+                                        </div>
+                                    </div>
 
-               
-                  <input name='phone_number'  label='Mobile number'  placeholder='+254 700 000' width={6}  />
-                  <input name='website'  label='Website' placeholder='www.mywebsite.com' width={10} />
-                
-              
-                  <input name='address'  label='Address' placeholder='2/77 New Street, Redport 3015-0200 Nairobi, Kenya ' width={16}  />
-             
+                                    <div class="mb-3">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                                    </div>
 
+                                    <div class="mb-3">
+                                        <label for="address">Address</label>
+                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
+                                    </div>
+                                </form>
+                            </div>                                            
                             </Tab.Pane>
                             <Tab.Pane eventKey="address">
                                 <h3>Address</h3>

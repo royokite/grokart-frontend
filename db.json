@@ -270,4 +270,10 @@
     "count": 10,
     "description": "Popcorn kernels"
   }
+],
+"users":[
+  {
+  "username": "test",
+  "password": "test123"
+}
 ]}

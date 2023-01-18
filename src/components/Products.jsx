@@ -1,7 +1,5 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import { CartProvider, useCart } from "react-use-cart";
-import Cart from "./cart";
 
 const Products = ({
   allProducts,

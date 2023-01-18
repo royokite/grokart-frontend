@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 
 function Cart() {
+  const navigate = useNavigate()
   const {
     isEmpty,
     totalUniqueItems,
@@ -17,6 +19,9 @@ function Cart() {
     return <h1 className="text-center">Your cart is empty</h1>;
   }
 
+  const handleCheckout = () => {
+    navigate("/checkout")
+  };
   
   return (
     <section className="py-4 container" style={{backgroundColor: "#1c1e1f"}}>
@@ -82,7 +87,7 @@ function Cart() {
           <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
             Clear Cart
           </button>
-          <button className="btn btn-primary m-2" onClick={() => console.log(items)}>Checkout</button>
+          <button className="btn btn-primary m-2" onClick={() => handleCheckout()}>Checkout</button>
         </div>
       </div>
     </section>
