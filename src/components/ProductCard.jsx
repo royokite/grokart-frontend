@@ -22,8 +22,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="col-md-3 mb-4 position-relative product-card
-    ">
+    <div className="col-md-3 mb-4 position-relative product-card">
       <div
         className="card h-100 text-center p-4 border-0"
         style={{ backgroundColor: "#181a1b" }}

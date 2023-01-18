@@ -11,6 +11,7 @@ import Checkout from './components/Checkout/Checkout.jsx';
 import Cart from './components/cart';
 import Products from './components/Products';
 import MyAccount from './components/MyAccount';
+import Footer from './components/Footer';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -66,6 +67,8 @@ function App() {
                         loading={loading} setLoading={setLoading}
                         filterProduct={filterProduct}
                     />
+                    <Footer/>
+                    
                 </>
                 
                 } 

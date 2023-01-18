@@ -11,7 +11,9 @@ const Products = ({
   filterProduct,
 }) => {
   const Loading = () => {
-    return <>Loading....</>;
+    return <><div class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div></>
   };
   const filterByName = () => {
     const name = document.getElementById("productName").value;
@@ -53,11 +55,10 @@ const Products = ({
             <hr />
             <div className="d-flex justify-content-center">
               <input
-                className="form-control me-2 w-25 text-center text-dark fw-bold border-0 bg-light rounded-pill shadow-sm text-center"
+                className="form-control me-2 w-25 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
                 id="productName"
                 type="text"
-                id="productName"
-                placeholder="Enter product name"
+                placeholder=""
               />
               <button
                 className="btn btn-outline-dark me-2 rounded-pill shadow-sm text-center"
@@ -111,13 +112,16 @@ const Products = ({
               Pantry
             </button>
           </div>
-          <hr />
+          <hr className="mt-5"/>
+          <div className="flex-wrapper">
           <div className="row justify-content-center product-row">
             <div className="row justify-content-center">
               {loading ? <Loading /> : renderProducts}
             </div>
           </div>
-          <hr />
+          </div>
+          <hr className="mt-4"
+          />
         </div>
       </div>
     </div>
