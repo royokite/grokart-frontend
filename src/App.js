@@ -30,7 +30,7 @@ function App() {
         setAllProducts(json);
         setFilter(json);
         setLoading(false);
-        // console.log(json);
+        console.log(json);
       }
       return () => {
         componentMounted = false;

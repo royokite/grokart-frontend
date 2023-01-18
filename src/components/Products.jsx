@@ -9,7 +9,7 @@ const Products = ({
   filterProduct,
 }) => {
   const Loading = () => {
-    return <><div class="spinner-border text-success" role="status">
+    return <><div className="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
   </div></>
   };
