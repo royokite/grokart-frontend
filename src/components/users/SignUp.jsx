@@ -31,7 +31,6 @@ function SignUp() {
           className="card-img mb-2 w-50 position-relative start-50 translate-middle top-0"
           alt="banner"
           height={120}
-          id = "banner-img"
           
         />
         <label>

@@ -19,7 +19,6 @@ function Login() {
           className="imf-fluid card-img cover-fit"
           alt="background"
           style={{height: "100vh"}}
-          id = "banner-img"
 
         />
         
