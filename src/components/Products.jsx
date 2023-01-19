@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import Loading from "./Loading";
 
 const Products = ({
   allProducts,
@@ -8,11 +9,7 @@ const Products = ({
   setFilter,
   filterProduct,
 }) => {
-  const Loading = () => {
-    return <><div className="spinner-border text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div></>
-  };
+
   const filterByName = () => {
     const name = document.getElementById("productName").value;
     const filteredProducts = allProducts.filter((product) =>

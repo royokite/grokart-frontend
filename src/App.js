@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { CartProvider } from "react-use-cart";
 
 import './App.css';
@@ -13,11 +13,13 @@ import Products from './components/Products';
 import MyAccount from './components/MyAccount';
 import Footer from './components/Footer';
 import Admin from './components/Admin';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [filter, setFilter] = useState(allProducts);
   const [loading, setLoading] = useState(false);
+  const { user } = useAuthContext()
 
   let componentMounted = true;
   
@@ -47,7 +49,6 @@ function App() {
     console.log(updatedList)
   }
 
-  
 
   return (
     <BrowserRouter>
@@ -79,7 +80,7 @@ function App() {
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/checkout" element={<><Navbar/><Checkout/></>}/>
                 <Route path="/my-account" element={<><Navbar/><MyAccount/></>}/>      
-                <Route path="/admin" element={<Admin allProducts={allProducts}/>}/>
+                <Route path="/admin" element={user ? <Admin allProducts={allProducts}/> : <Login/>} />
           </Routes>
       </CartProvider>
     </BrowserRouter>

@@ -32,9 +32,9 @@ const Navbar = () => {
           </li>
           <li className="nav-item d-flex flex-row mx-5">
             {user && (
-              <div className="d-flex">
-                <span>Hi,</span>
-                <span>{user.user.username}</span>
+              <div className="m-2 me-4 fst-italic">
+                <span>Hello, </span>
+                <strong style={{color: "#f97316"}}><span>{user.user.username}</span></strong>
               </div>
             )}
             <div className="dropdown">

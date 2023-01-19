@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  TiSocialFacebook,
-  TiSocialInstagram,
-  TiSocialTwitter,
-  TiSocialYoutube,
-} from "react-icons/ti";
-
 import "./Footer.css";
 
 const Footer = () => {
@@ -17,7 +10,6 @@ const Footer = () => {
             <div className="footer">
               <div className="footer_box">
                 <div className="footer_box_social">
-                  {/* <Image src={} alt="footer logo" height={100} width={100}/> */}
 
                   <img
                     src="./images/WhatsApp_Image_2023-01-06_at_3.57.54_PM__1_-removebg.png"
@@ -25,25 +17,6 @@ const Footer = () => {
                     alt="banner"
                     height={120}
                   />
-                  <div>
-                    <div className="footer_social">
-                      <a href="#">
-                        {" "}
-                        <TiSocialFacebook />{" "}
-                      </a>
-
-                      <a href="#">
-                        <TiSocialInstagram />
-                      </a>
-
-                      <a href="#">
-                        <TiSocialTwitter />
-                      </a>
-                      <a href="#">
-                        <TiSocialYoutube />
-                      </a>
-                    </div>
-                  </div>
                 </div>
                 <div className="footer_box_discover">
                   <h5>PRODUCTS</h5>
@@ -77,7 +50,7 @@ const Footer = () => {
             </div>
 
             <p className="lead text-center">
-              Gro-kart All Rights Reserved &copy;{new Date().getFullYear()}
+              Grokart All Rights Reserved &copy;{new Date().getFullYear()}
             </p>
           </div>
         </div>

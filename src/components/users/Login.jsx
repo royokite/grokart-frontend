@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLogin } from "../../hooks/useLogin"
+import Loading from "../Loading"
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -38,7 +39,6 @@ function Login() {
           placeholder='Email'
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          id = "form-control1"
         />
       </label>
       <br />
@@ -49,15 +49,19 @@ function Login() {
           placeholder='Password'
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-          id = "form-control1"
         />
       </label>
-      <br />
-      <button className="btn position-absolute start-50 translate-middle mt-5"
-        type="submit"
-        id = "loginbtn"
-        disabled={isLoading}
-      >Sign In</button>
+      <br />      
+      {
+        isLoading ? 
+        <Loading/> : 
+        <button 
+          className="btn position-absolute start-50 translate-middle mt-5"
+          type="submit"
+          id = "loginbtn"
+        >Sign In
+        </button>
+      }
       {error && <div className="error">{error}</div>}      
     </form>    
     <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-5">Don't have an account? <strong>Sign up here!</strong></a>

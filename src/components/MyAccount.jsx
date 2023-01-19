@@ -5,7 +5,6 @@ import OrderCard from './OrderCard';
 
 
 const MyAccount = () => {
-
     return (
         <Container className="py-5 mt-2">
             <h2 className="text-center">My Account</h2>
@@ -74,42 +73,58 @@ const MyAccount = () => {
                             <h3>Account details</h3>
                             <hr />
                             <div>
-                                <form class="needs-validation">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="firstName">First name</label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" />
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="lastName">Last name</label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" />
-                                        </div>
+                                {/* { user ? ( */}
+                                <form className="needs-validation">
+                                    <div className="mb-3">
+                                        <label for="name">Full name</label>
+                                        <input type="text" className="form-control" id="name" placeholder="John Doe" />
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div className="mb-3">
                                         <label for="username">Username</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">@</span>
+                                        <div className="input-group">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text">@</span>
                                             </div>
-                                            <input type="text" class="form-control" id="username" placeholder="Username" />
+                                            <input type="text" className="form-control" id="username" placeholder="Username" />
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div className="mb-3">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                                        <input type="email" className="form-control" id="email" placeholder="you@example.com" />
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div className="mb-3">
                                         <label for="address">Address</label>
-                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
+                                        <input type="text" className="form-control" id="address" placeholder="1234 Main St" />
                                     </div>
                                 </form>
+                                {/* ) : ( */}
+                                {/* <div>
+                                    <div className="mb-3">
+                                        <label htmlFor="name">Full name</label>
+                                        <p className="fs-4"></p>
+                                    </div>
+                    
+                                    <div className="mb-3">
+                                      <label htmlFor="username">Username</label>
+                                        <p className="fs-4"></p>
+                                    </div>
+                    
+                                    <div className="mb-3">
+                                      <label htmlFor="email">Email</label>
+                                      <p className="fs-4"></p>
+                                    </div>
+                    
+                                    <div className="mb-3">
+                                      <label htmlFor="address">Address</label>
+                                      <p className="fs-4"></p>
+                                    </div>
+                                    <hr className="mb-4" />                    
+                                </div> */}
+                                {/* )} */}
                             </div>                                            
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="address">
-                                <h3>Address</h3>
                             </Tab.Pane>
                         </Tab.Content>
                      </Col>

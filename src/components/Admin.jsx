@@ -29,13 +29,13 @@ const Admin = ({ allProducts }) => {
     const handleClick = () => {
         logout()
       } 
-    
+     
     useEffect(() => {
         fetch("http://localhost:5000/users")
         .then(res => res.json())
         .then(data => setCustomers(data))
-    }, []);
-
+    }, []);    
+   
     return (
         <Container className="py-5 mt-2">
             <Tab.Container defaultActiveKey="products">
