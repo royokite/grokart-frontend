@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Tab, Nav, Image, Button } from 'react-bootstrap';
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import './my-account.css';
+import { 
+    GridComponent, 
+    ColumnsDirective, 
+    ColumnDirective,
+    Page,
+    Sort,
+    Filter,
+    Edit,
+    Toolbar,
+    Selection,
+    Search,
+    Inject
+} from '@syncfusion/ej2-react-grids';
 
-const Admin = () => {
+const pageSettings = { pageSize: 10 };
+const editing = { allowDeleting: true, allowEditing: true, allowAdding: true };
+const toolbarOptions = ["Add", "Delete", "Edit", "Search", "Update", "Cancel"];
+
+const Admin = ({ allProducts }) => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
+    const [customers, setCustomers] = useState([])
 
     const handleClick = () => {
         logout()
       } 
-  
+    
+    useEffect(() => {
+        fetch("http://localhost:5000/users")
+        .then(res => res.json())
+        .then(data => setCustomers(data))
+    }, []);
+
     return (
         <Container className="py-5 mt-2">
-            <Tab.Container defaultActiveKey="ecommerce">
+            <Tab.Container defaultActiveKey="products">
                 <Row className="justify-content-evenly mt-4 p-1">
-                     <Col sm={3} className={"text-white p-2 rounded h-100 mb-3 user-menu"} style={{backgroundColor: "#1c1e1f"}}>
+                     <Col sm={2} className={"text-white p-2 rounded h-100 mb-3 user-menu"} style={{backgroundColor: "#1c1e1f"}}>
                         <Row className="mb-3 py-2">
                            <Col xs={3} className="pe-0">
                                 <Image
@@ -73,19 +97,65 @@ const Admin = () => {
                             </Nav.Item>
                         </Nav>
                      </Col>
-                     <Col sm={8} className="text-white p-2 rounded" style={{backgroundColor: "#1c1e1f"}}>
+                     <Col sm={9} className="text-white p-2 rounded" style={{backgroundColor: "#1c1e1f"}}>
                         <Tab.Content>
-                            <Tab.Pane eventKey="ecommerce">
-                                <h3 className="text-center text-white">Ecommerce Tracker</h3>
+                            <Tab.Pane eventKey="products">
+                                <h3 className="text-center text-white">Products page</h3>
                             </Tab.Pane>
-                            <Tab.Pane eventKey="ecommerce">
+                            <Tab.Pane eventKey="products">
                             <hr />
                             <div>
-                                <div>Details</div>
+                                <GridComponent 
+                                    dataSource={allProducts} 
+                                    allowPaging={true} 
+                                    pageSettings={pageSettings}
+                                    allowSorting={true}
+                                    allowFiltering={true}
+                                    editSettings={editing}
+                                    toolbar={toolbarOptions}
+                                    Selection
+                                >
+                                <ColumnsDirective>
+                                    <ColumnDirective field='id' headerText='ID' width='60'/>
+                                    <ColumnDirective field='image' headerText='Image' width='120'/>
+                                    <ColumnDirective field='name' headerText='Name' width='250'/>
+                                    <ColumnDirective field='price' headerText='Price' width='90' editType="numericedit"/>
+                                    <ColumnDirective field='description' headerText='Description' width='150'/>
+                                    <ColumnDirective field='count' headerText='Count' width='80' editType="numericedit"/>
+                                    <ColumnDirective field='category_id' headerText='Cat ID' width='80' editType="dropdownedit"/>
+                                </ColumnsDirective>
+                                <Inject services={[Page, Sort, Filter]}/>
+                                </GridComponent>
                             </div>                                            
                             </Tab.Pane>
-                            <Tab.Pane eventKey="address">
-                                <h3>Address</h3>
+                        </Tab.Content>
+                        <Tab.Content>
+                            <Tab.Pane eventKey="customers">
+                                <h3 className="text-center text-white">Customers page</h3>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="customers">
+                            <hr />
+                            <div>
+                                <GridComponent 
+                                    dataSource={customers} 
+                                    allowPaging={true} 
+                                    pageSettings={pageSettings}
+                                    allowSorting={true}
+                                    allowFiltering={true}
+                                >
+                                <ColumnsDirective>
+                                    <ColumnDirective field='id' headerText='ID' width='60'/>
+                                    <ColumnDirective field='name' headerText='Name' width='100'/>
+                                    <ColumnDirective field='email' headerText='Email' width='150'/>
+                                    <ColumnDirective field='gender' headerText='Gender' width='90' editType="dropdownedit"/>
+                                    <ColumnDirective field='address' headerText='Address' width='130'/>
+                                    <ColumnDirective field='contact' headerText='Contact' width='120'/>
+                                    <ColumnDirective field='username' headerText='Username' width='100'/>
+                                    <ColumnDirective field='role' headerText='Role' width='80'/>
+                                </ColumnsDirective>
+                                <Inject services={[Page, Sort, Filter, Edit, Toolbar, Selection, Search]}/>
+                                </GridComponent>
+                            </div>                                            
                             </Tab.Pane>
                         </Tab.Content>
                      </Col>

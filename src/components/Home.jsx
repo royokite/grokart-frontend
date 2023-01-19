@@ -12,16 +12,16 @@ const Home = () => {
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center ">
           <div className="container">
-            <h1 className="card-title fw-bold text-success">
+            <h1 className="card-title fw-bold" style={{color: "#4d7e3e"}}>
               WELCOME TO GROKART
             </h1>
             <hr className="w-25 text-dark"/>
             <p className="card-text text-justify" style={{color: "#f97316"}}>
-              The easiest way to shop for groceries online! <br/>With GroKart, you
-              can shop from the comfort of your home.<br/> Simply add
-              items to your cart, and choose a delivery <br/>or pickup time
-              that works for you.<br/> Start shopping with GroKart today and discover
-              the  <br/> future of grocery shopping.
+              <strong>
+                The easiest way to shop for groceries online! <br/>With GroKart, you
+                can shop from the comfort of your home.<br/> Start shopping with GroKart today and discover
+                the  <br/> future of grocery shopping.
+              </strong>
             </p>
             <hr className="w-25 text-dark"/>
           </div>

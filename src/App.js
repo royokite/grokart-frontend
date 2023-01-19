@@ -79,7 +79,7 @@ function App() {
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/checkout" element={<><Navbar/><Checkout/></>}/>
                 <Route path="/my-account" element={<><Navbar/><MyAccount/></>}/>      
-                <Route path="/admin" element={<Admin/>}/>
+                <Route path="/admin" element={<Admin allProducts={allProducts}/>}/>
           </Routes>
       </CartProvider>
     </BrowserRouter>
