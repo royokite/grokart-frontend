@@ -112,7 +112,7 @@ const Products = ({
           </div>
           <hr className="mt-5"/>
           <div className="flex-wrapper">
-          <div className="row justify-content-center product-row">
+          <div className="row justify-content-center product-row g-5 mt-1">
             <div className="row justify-content-center">
               {loading ? <Loading /> : renderProducts}
             </div>
