@@ -12,6 +12,7 @@ import Cart from './components/Cart';
 import Products from './components/Products';
 import MyAccount from './components/MyAccount';
 import Footer from './components/Footer';
+import Admin from './components/Admin';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -78,6 +79,7 @@ function App() {
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/checkout" element={<><Navbar/><Checkout/></>}/>
                 <Route path="/my-account" element={<><Navbar/><MyAccount/></>}/>      
+                <Route path="/admin" element={<Admin/>}/>
           </Routes>
       </CartProvider>
     </BrowserRouter>

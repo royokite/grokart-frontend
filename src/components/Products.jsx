@@ -38,7 +38,7 @@ const Products = ({
               <input
                 className="form-control me-2 w-25 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
                 id="productName"
-                type="text"
+                type="search"
                 placeholder=""
               />
               <button
