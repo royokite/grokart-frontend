@@ -76,12 +76,12 @@ const MyAccount = () => {
                                 {/* { user ? ( */}
                                 <form className="needs-validation">
                                     <div className="mb-3">
-                                        <label for="name">Full name</label>
+                                        <label htmlFor="name">Full name</label>
                                         <input type="text" className="form-control" id="name" placeholder="John Doe" />
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="username">Username</label>
+                                        <label htmlFor="username">Username</label>
                                         <div className="input-group">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text">@</span>
@@ -91,12 +91,12 @@ const MyAccount = () => {
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="email">Email</label>
+                                        <label htmlFor="email">Email</label>
                                         <input type="email" className="form-control" id="email" placeholder="you@example.com" />
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="address">Address</label>
+                                        <label htmlFor="address">Address</label>
                                         <input type="text" className="form-control" id="address" placeholder="1234 Main St" />
                                     </div>
                                 </form>

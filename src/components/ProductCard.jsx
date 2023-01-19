@@ -1,25 +1,24 @@
 import React from "react";
 import { useCart } from "react-use-cart";
 import { useState } from "react";
-//import { Alert } from "react-bootstrap";
 import { Overlay, Tooltip } from "react-bootstrap";
 import { useRef } from "react";
 
 const ProductCard = ({ product }) => {
   const { addItem, items } = useCart();
-  const [showAlert, setShowAlert] = useState(false);
   const [show, setShow] = useState(false);
   const target = useRef(null);
 
   const addToCart = () => {
     addItem(product);
-    console.log(items);
   };
 
+  let showAlert = false;
+
   const handleClick = () => {
-    setShowAlert(true);
+    showAlert = !showAlert
     setTimeout(() => {
-      setShowAlert(false);
+      showAlert = !showAlert;
       setShow(false);
     }, 2000);
   };

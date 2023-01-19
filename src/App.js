@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartProvider } from "react-use-cart";
 
 import './App.css';
@@ -20,24 +20,16 @@ function App() {
   const [filter, setFilter] = useState(allProducts);
   const [loading, setLoading] = useState(false);
   const { user } = useAuthContext()
-
-  let componentMounted = true;
-  
+ 
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch("http://localhost:5000/products");
       const json = await response.json();
-      if (componentMounted) {
        
-        setAllProducts(json);
-        setFilter(json);
-        setLoading(false);
-        // console.log(json);
-      }
-      return () => {
-        componentMounted = false;
-      };
+      setAllProducts(json);
+      setFilter(json);
+      setLoading(false);
     };
 
     getProducts();
@@ -46,7 +38,6 @@ function App() {
   const filterProduct = (cat) => {
     const updatedList = allProducts.filter((x) => x.category_id === cat);
     setFilter(updatedList)
-    console.log(updatedList)
   }
 
 
