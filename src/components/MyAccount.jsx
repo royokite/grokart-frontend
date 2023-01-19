@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Tab, Nav, Image } from 'react-bootstrap';
 import './my-account.css';
 import OrderCard from './OrderCard';
 
 
 const MyAccount = () => {
+    const [name, setName] = useState("");
+    const [age, setAge] = useState();
+    const [email, setEmail] = useState("");
+    const [gender, setGender] = useState("");
+    const [contact, setContact] = useState();
+    const [address, setAddress] = useState("");
+
+    // const handleUpdate = (e) => {
+    //     e.preventDefault()
+    //     const updateUser = {
+    //         name,
+    //         age,
+    //         email,
+    //         gender,
+    //         contact,
+    //         address
+    //     };
+
+    //     fetch(`http://localhost:5000/users/${user.user.id}`, {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(updateUser)
+    //     })
+    //     .then(res => res.json())        
+    // };
+
     return (
         <Container className="py-5 mt-2">
             <h2 className="text-center">My Account</h2>
@@ -15,17 +41,15 @@ const MyAccount = () => {
                         <Row className="mb-3 py-2">
                            <Col xs={3} className="pe-0">
                                 <Image
-                                    src="https://s3-eu-west-1.amazonaws.com/naivas-live/productImage/NVSS02135.png"
+                                    src="./images/gro-kart-logo.png"
                                     thumbnail
                                     fluid
-                                    roundedCircle
                                     className="p-0"
                                 />
                            </Col> 
-                           <Col xs={9} className="pt-1">
-                                <span>Hello,</span>
-                                <h4 style={{color: "#f97316"}}>Username</h4>
-                           </Col>
+                           {/* <Col xs={9} className="pt-1">
+                                <h3 style={{color: "#f97316"}}>GK</h3>
+                           </Col> */}
                         </Row>
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item className="mb-3">
@@ -73,57 +97,118 @@ const MyAccount = () => {
                             <h3>Account details</h3>
                             <hr />
                             <div>
-                                {/* { user ? ( */}
-                                <form className="needs-validation">
-                                    <div className="mb-3">
-                                        <label htmlFor="name">Full name</label>
-                                        <input type="text" className="form-control" id="name" placeholder="John Doe" />
-                                    </div>
-
-                                    <div className="mb-3">
-                                        <label htmlFor="username">Username</label>
-                                        <div className="input-group">
-                                            <div className="input-group-prepend">
-                                                <span className="input-group-text">@</span>
-                                            </div>
-                                            <input type="text" className="form-control" id="username" placeholder="Username" />
+                                {/* { !user || showForm ? ( */}
+                                <form>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="name">Full name</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="name" 
+                                                value={name} 
+                                                onChange={(e) => setName(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="age">Age</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="age" 
+                                                value={age} 
+                                                onChange={(e) => setAge(e.target.value)}
+                                            />
                                         </div>
                                     </div>
-
-                                    <div className="mb-3">
-                                        <label htmlFor="email">Email</label>
-                                        <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="email">Email</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="email" 
+                                                value={email} 
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="gender">Gender</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="gender" 
+                                                value={gender} 
+                                                onChange={(e) => setGender(e.target.value)}
+                                            />
+                                        </div>
                                     </div>
-
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="address">Address</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="address"
+                                                value={address} 
+                                                onChange={(e) => setAddress(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="contact">Contact</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="contact"
+                                                value={contact} 
+                                                onChange={(e) => setContact(e.target.value)}
+                                             />
+                                        </div>
+                                    </div>
+                                    <hr/>
                                     <div className="mb-3">
-                                        <label htmlFor="address">Address</label>
-                                        <input type="text" className="form-control" id="address" placeholder="1234 Main St" />
+                                        <button className='btn px-3'>Update</button>
                                     </div>
                                 </form>
-                                {/* ) : ( */}
-                                {/* <div>
-                                    <div className="mb-3">
-                                        <label htmlFor="name">Full name</label>
-                                        <p className="fs-4"></p>
+                                 {/* ) : ( 
+                                <div>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="name">Full name</label>
+                                            <p className="fs-4">{user.user.name}</p>
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="age">Age</label>
+                                            <p className="fs-4">{user.user.age}</p>
+                                        </div>
                                     </div>
-                    
-                                    <div className="mb-3">
-                                      <label htmlFor="username">Username</label>
-                                        <p className="fs-4"></p>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="email">Email</label>
+                                            <p className="fs-4">{user.user.email}</p>
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="gender">Gender</label>
+                                            <p className="fs-4">{user.user.gender}</p>
+                                        </div>
                                     </div>
-                    
-                                    <div className="mb-3">
-                                      <label htmlFor="email">Email</label>
-                                      <p className="fs-4"></p>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="address">Address</label>
+                                            <p className="fs-4">{user.user.address}</p>
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="contact">Contact</label>
+                                            <p className="fs-4">{user.user.contact}</p>
+                                        </div>
                                     </div>
-                    
+                                    <hr/>
                                     <div className="mb-3">
-                                      <label htmlFor="address">Address</label>
-                                      <p className="fs-4"></p>
+                                        <button className='btn px-3' type='submit'>Update</button>
                                     </div>
                                     <hr className="mb-4" />                    
-                                </div> */}
-                                {/* )} */}
+                                </div> 
+                                 )}  */}
                             </div>                                            
                             </Tab.Pane>
                         </Tab.Content>

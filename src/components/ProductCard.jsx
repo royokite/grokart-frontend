@@ -5,7 +5,7 @@ import { Overlay, Tooltip } from "react-bootstrap";
 import { useRef } from "react";
 
 const ProductCard = ({ product }) => {
-  const { addItem, items } = useCart();
+  const { addItem } = useCart();
   const [show, setShow] = useState(false);
   const target = useRef(null);
 
@@ -63,11 +63,6 @@ const ProductCard = ({ product }) => {
                 </Tooltip>
               )}
             </Overlay>
-            {/* {showAlert && (
-              <Alert variant="success" className="fade-out">
-                Item added to cart!
-              </Alert>
-            )} */}
           </div>
         </div>
       </div>
