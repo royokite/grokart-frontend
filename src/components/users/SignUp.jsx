@@ -31,49 +31,54 @@ function SignUp() {
           className="card-img mb-2 w-50 position-relative start-50 translate-middle top-0"
           alt="banner"
           height={120}
+          id = "banner-img"
           
         />
         <label>
           <input
-            className="form-control mb-2 form-control-lg mx-auto d-block"
+            className="form-control  form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
             type="text"
             placeholder="Username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
             required
+            id = "form-control1"
           />
         </label>
         <br />
         <label>
           <input
-            className="form-control mb-2 form-control-lg mx-auto d-block"
+            className="form-control mb-2 pl-3 form-control-lg mt-5"
             type="email"
             placeholder="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
+            id = "form-control1"
           />
         </label>
         <br />
         <label>
           <input
-            className="form-control mb-2 form-control-lg mt-5"
+            className="form-control mb-2 form-control-lg mt-3"
             placeholder="Password"
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             required
+            id="form-control1"
           />
         </label>
         <br />
         <label>
           <input
-            className="form-control mb-2 pl-3 form-control-lg"
+            className="form-control mb-2 pl-3 mt-3 form-control-lg"
             placeholder="Confirm password"
             type="password"
             value={passwordConfirmation}
             onChange={(event) => setPasswordConfirmation(event.target.value)}
             required
+            id="form-control1"
           />
         </label>
         <br />
@@ -89,7 +94,7 @@ function SignUp() {
       </form>
       <a
         href="/login"
-        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4" id="login-button"
+        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-5" id="login-button"
       >
         Already have an account? <strong>Sign in here!</strong>
       </a>

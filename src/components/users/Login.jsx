@@ -16,9 +16,10 @@ function Login() {
     <section className="signin-container">
       <img
           src="./images/access-bg.png"
-          className="card-img"
+          className="imf-fluid card-img cover-fit"
           alt="background"
           style={{height: "100vh"}}
+          id = "banner-img"
 
         />
         
@@ -38,6 +39,7 @@ function Login() {
           placeholder='Email'
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          id = "form-control1"
         />
       </label>
       <br />
@@ -48,6 +50,7 @@ function Login() {
           placeholder='Password'
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          id = "form-control1"
         />
       </label>
       <br />
@@ -58,7 +61,7 @@ function Login() {
       >Sign In</button>
       {error && <div className="error">{error}</div>}      
     </form>    
-    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-4">Don't have an account? <strong>Sign up here!</strong></a>
+    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-5">Don't have an account? <strong>Sign up here!</strong></a>
     </section>
 
 

@@ -60,16 +60,16 @@ tbody {
   background-color: #4d7e3e !important;
 
 }
-
-#form-control {
-  background:transparent !important;
+#form-control1 {
+  background: transparent !important;
   border: 1px solid #fdf5ef !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   color: aliceblue !important;
   height: 60px;
 }
 
-input.form-control::-webkit-input-placeholder {
+
+input.form-control1::-webkit-input-placeholder {
   color: aliceblue !important;
 }
 
@@ -109,6 +109,10 @@ input.productName::-webkit-input-placeholder {
   background-color: #4d7e3e
 }
 
+#banner-img {
+
+  height: 100vh;
+}
 
 
 
