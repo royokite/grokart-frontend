@@ -36,17 +36,18 @@ const Products = ({
             <hr />
             <div className="d-flex justify-content-center">
               <input
-                className="form-control me-2 w-25 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
+                className="form-control me-2 w-50 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
                 id="productName"
                 type="search"
-                placeholder=""
+                placeholder ="Search Products"
+                onChange={filterByName}
               />
-              <button
+              {/* <button
                 className="btn btn-outline-dark me-2 rounded-pill shadow-sm text-center"
                 onClick={filterByName}
               >
                 Search
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="buttons d-flex justify-content-center mb-2">
