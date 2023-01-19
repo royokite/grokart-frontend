@@ -7,7 +7,6 @@ import { useRef } from "react";
 
 const ProductCard = ({ product }) => {
   const { addItem, items } = useCart();
-  const [isAdded, setIsAdded] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [show, setShow] = useState(false);
   const target = useRef(null);
@@ -18,7 +17,6 @@ const ProductCard = ({ product }) => {
   };
 
   const handleClick = () => {
-    setIsAdded(true);
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);

@@ -74,15 +74,15 @@ const MyAccount = () => {
                             <h3>Account details</h3>
                             <hr />
                             <div>
-                                <form class="needs-validation" novalidate>
+                                <form class="needs-validation">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="firstName">First name</label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" />
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="lastName">Last name</label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" />
                                         </div>
                                     </div>
 
@@ -92,7 +92,7 @@ const MyAccount = () => {
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">@</span>
                                             </div>
-                                            <input type="text" class="form-control" id="username" placeholder="Username" required />
+                                            <input type="text" class="form-control" id="username" placeholder="Username" />
                                         </div>
                                     </div>
 
@@ -103,7 +103,7 @@ const MyAccount = () => {
 
                                     <div class="mb-3">
                                         <label for="address">Address</label>
-                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
+                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
                                     </div>
                                 </form>
                             </div>                                            

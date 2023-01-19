@@ -25,23 +25,6 @@ const Products = ({
     <ProductCard key={product.id} product={product} />
   ));
 
-  const filterByProduct = (category) => {
-    let filteredProducts;
-    const name = document.getElementById("productName").value;
-    if (category) {
-      filteredProducts = allProducts.filter(
-        (product) =>
-          product.category_id === category &&
-          product.name.toLowerCase().includes(name.toLowerCase())
-      );
-    } else {
-      filteredProducts = allProducts.filter((product) =>
-        product.name.toLowerCase().includes(name.toLowerCase())
-      );
-    }
-    setFilter(filteredProducts);
-  };
-
   return (
     <div className="container-fluid">
       <div className="container my-5 py-5 text-white">
