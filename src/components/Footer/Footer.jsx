@@ -44,10 +44,10 @@ function Footer(){
                     <div className="col">
                         <h4> CONTACT</h4>
                         <ui className="list-unstyled">
-                            <li>Nairobi</li>
-                            <li>info@grokart.com</li>
-                            <li>+254 701 234 567</li>
-                            <li>+254 701 234 568</li>
+                            <li>📌 Nairobi</li>
+                            <li>✉ info@grokart.com</li>
+                            <li>✆ +254 701 234 567</li>
+                            <li>☏ +254 701 234 568</li>
                         </ui>
                     </div>
                 </div>
