@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Checkout = () => {
-    const { totalItems, items, cartTotal } = useCart();
+    const { totalItems, items, cartTotal, emptyCart } = useCart();
     const [stkCheck, setStkCheck] = useState();
     const { user } = useAuthContext();
     const navigate = useNavigate();
@@ -45,6 +45,10 @@ const Checkout = () => {
       .then(res => res.json())
       .then(queryMessage => console.log(queryMessage))
       .then(handleClose())
+      .then(() => {
+        emptyCart();
+        navigate("/")
+      })
       // .then(() => {
       //   if(query[1].ResultCode === "0") {
       //     alert("Payment received, order processing")
