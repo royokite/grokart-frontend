@@ -23,7 +23,7 @@ const Checkout = () => {
         "amount": cartTotal
       };
 
-      fetch("https://7d11-197-237-131-91.ngrok.io/stkpush", {
+      fetch("https://6183-196-101-71-81.ngrok.io/stkpush", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(cred)
@@ -37,7 +37,7 @@ const Checkout = () => {
         "checkoutRequestID": `${stkCheck[1].CheckoutRequestID}`
       }
 
-      fetch("https://7d11-197-237-131-91.ngrok.io/stkquery", {
+      fetch("https://6183-196-101-71-81.ngrok.io/stkquery", {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(queryParams)
