@@ -12,7 +12,7 @@ export const useLogin = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch("http://127.0.0.1:5000/login", {
+    const response = await fetch("https://grokart.onrender.com/login", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ email, password })
@@ -30,7 +30,11 @@ export const useLogin = () => {
       // update the auth context
       dispatch({type: 'LOGIN', payload: json})
 
-      navigate("/")
+      if (JSON.parse(localStorage.getItem('user')).user.role === "admin") {
+        navigate("/admin")
+      } else {
+        navigate("/")
+      }
       
       // update loading state
       setIsLoading(false)

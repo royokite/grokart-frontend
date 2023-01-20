@@ -6,12 +6,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Checkout = () => {
-    const { totalItems, items, cartTotal } = useCart();
+    const { totalItems, items, cartTotal, emptyCart } = useCart();
     const [stkCheck, setStkCheck] = useState();
     const { user } = useAuthContext();
     const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
+    const [query, setQuery] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -19,11 +20,11 @@ const Checkout = () => {
     const handlePayment = () => {
       handleShow();
       const cred = {
-        "phoneNumber": "254718246082",
+        "phoneNumber": user.user.contact,
         "amount": cartTotal
       };
 
-      fetch("https://b96d-197-237-131-91.ngrok.io/stkpush", {
+      fetch("https://7d11-197-237-131-91.ngrok.io/stkpush", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(cred)
@@ -37,15 +38,26 @@ const Checkout = () => {
         "checkoutRequestID": `${stkCheck[1].CheckoutRequestID}`
       }
 
-      fetch("https://b96d-197-237-131-91.ngrok.io/stkquery", {
+      fetch("https://7d11-197-237-131-91.ngrok.io/stkquery", {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(queryParams)
       })
       .then(res => res.json())
-      .then(queryMessage => console.log(queryMessage))
+      .then(queryMessage => setQuery(queryMessage))
       .then(handleClose())
+      .then(() => {
+        if(query[1].ResultCode === "0") {
+          alert("Payment received, order processing")
+          emptyCart();
+          navigate("/")
+        } else {
+          alert("Invalid response, please try again")
+        }
+      })
     };
+
+    console.log(query[1].ResultCode)
 
     return (
         <div className="container w-75">

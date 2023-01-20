@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSignup } from "../../hooks/useSignup"
+import Loading from "../Loading";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -81,14 +82,17 @@ function SignUp() {
           />
         </label>
         <br />
+        {
+        isLoading ? 
+        <Loading/> : 
         <button
           className="btn position-absolute start-50 translate-middle mt-5"
           type="submit"
-          id = "loginbtn"
-          disabled={isLoading}
+          id = "signupbtn"
           >
           Sign Up
         </button>
+        }
         {error && <div className="error">{error}</div>}
       </form>
       <a

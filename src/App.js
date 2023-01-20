@@ -13,18 +13,16 @@ import Products from './components/Products';
 import MyAccount from './components/MyAccount';
 import Footer from './components/Footer';
 import Admin from './components/Admin';
-import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [filter, setFilter] = useState(allProducts);
   const [loading, setLoading] = useState(false);
-  const { user } = useAuthContext()
  
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/products");
+      const response = await fetch("https://grokart.onrender.com/products");
       const json = await response.json();
        
       setAllProducts(json);
@@ -71,7 +69,7 @@ function App() {
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/checkout" element={<><Navbar/><Checkout/></>}/>
                 <Route path="/my-account" element={<><Navbar/><MyAccount/></>}/>      
-                <Route path="/admin" element={user ? <Admin allProducts={allProducts}/> : <Login/>} />
+                <Route path="/admin" element={<Admin allProducts={allProducts}/>}/>
           </Routes>
       </CartProvider>
     </BrowserRouter>

@@ -1,5 +1,10 @@
-const baseURL = "http://localhost:5000";
+const baseURL = "https://grokart.onrender.com";
 
-export const getProduct = async() => {
+export const getProducts = async() => {
     return await fetch(baseURL + "/products").then(res => res.json());
 };
+
+export const getCustomers = async() => {
+    return await fetch(baseURL + "/users").then(res => res.json());
+};
+

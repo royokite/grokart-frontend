@@ -113,3 +113,16 @@ input.productName::-webkit-input-placeholder {
 #banner-img {
   height: 100vh;
 }
+
+div.error {
+  /* padding: 10px; */
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  /* margin: 20px 0; */
+  text-align: center;
+}
+input.error {
+  border: 1px solid var(--error);
+}
