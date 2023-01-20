@@ -6,13 +6,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Checkout = () => {
-    const { totalItems, items, cartTotal, emptyCart } = useCart();
+    const { totalItems, items, cartTotal } = useCart();
     const [stkCheck, setStkCheck] = useState();
     const { user } = useAuthContext();
     const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
-    const [query, setQuery] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -44,20 +43,20 @@ const Checkout = () => {
         body: JSON.stringify(queryParams)
       })
       .then(res => res.json())
-      .then(queryMessage => setQuery(queryMessage))
+      .then(queryMessage => console.log(queryMessage))
       .then(handleClose())
-      .then(() => {
-        if(query[1].ResultCode === "0") {
-          alert("Payment received, order processing")
-          emptyCart();
-          navigate("/")
-        } else {
-          alert("Invalid response, please try again")
-        }
-      })
+      // .then(() => {
+      //   if(query[1].ResultCode === "0") {
+      //     alert("Payment received, order processing")
+      //     emptyCart();
+      //     navigate("/")
+      //   } else {
+      //     alert("Invalid response, please try again")
+      //   }
+      // })
     };
 
-    console.log(query[1].ResultCode)
+    // console.log(query[1].ResultCode)
 
     return (
         <div className="container w-75">
