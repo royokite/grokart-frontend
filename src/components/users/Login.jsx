@@ -20,6 +20,7 @@ function Login() {
           className="imf-fluid card-img cover-fit"
           alt="background"
           style={{height: "100vh"}}
+          
 
         />
         
@@ -39,6 +40,7 @@ function Login() {
           placeholder='Email'
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          id = "form-control1"
         />
       </label>
       <br />
@@ -49,6 +51,7 @@ function Login() {
           placeholder='Password'
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          id = "form-control1"
         />
       </label>
       <br />      
