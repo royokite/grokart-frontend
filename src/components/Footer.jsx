@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="footer_box_social">
 
                   <img
-                    src="./images/WhatsApp_Image_2023-01-06_at_3.57.54_PM__1_-removebg.png"
+                    src="./images/logo-no-bg.png"
                     className="card-img "
                     alt="banner"
                     height={120}

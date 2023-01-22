@@ -9,6 +9,7 @@ const Home = () => {
           className="card-img"
           alt="background"
           height="660"
+          style={{objectFit: "cover"}}
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center ">
           <div className="container">

@@ -33,7 +33,7 @@ const Products = ({
             <hr />
             <div className="d-flex justify-content-center">
               <input
-                className="form-control me-2 w-50 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
+                className="form-control me-2 w-25 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
                 id="productName"
                 type="search"
                 placeholder ="Search Products"
@@ -47,7 +47,7 @@ const Products = ({
               </button> */}
             </div>
           </div>
-          <div className="buttons d-flex justify-content-center mb-2">
+          <div className="buttons d-flex justify-content-center mb-2 mw-100">
             <button
               className="btn btn-outline-dark me-2"
               onClick={() => setFilter(allProducts)}
