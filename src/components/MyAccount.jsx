@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Tab, Nav, Image } from 'react-bootstrap';
 import './my-account.css';
 import OrderCard from './OrderCard';
+import { useAuthContext } from "../hooks/useAuthContext";
 
 
 const MyAccount = () => {
@@ -11,25 +12,26 @@ const MyAccount = () => {
     const [gender, setGender] = useState("");
     const [contact, setContact] = useState();
     const [address, setAddress] = useState("");
+    const { user } = useAuthContext();
 
-    // const handleUpdate = (e) => {
-    //     e.preventDefault()
-    //     const updateUser = {
-    //         name,
-    //         age,
-    //         email,
-    //         gender,
-    //         contact,
-    //         address
-    //     };
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        const updateUser = {
+            name,
+            age,
+            email,
+            gender,
+            contact,
+            address
+        };
 
-    //     fetch(`http://localhost:5000/users/${user.user.id}`, {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(updateUser)
-    //     })
-    //     .then(res => res.json())        
-    // };
+        fetch(`https://grokart.onrender.com/users/${user.user.id}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateUser)
+        })
+        .then(res => res.json())        
+    };
 
     return (
         <Container className="py-5 mt-2">
@@ -79,18 +81,18 @@ const MyAccount = () => {
                             <Tab.Pane eventKey="my-orders">
                                 <h3 className="text-center text-white">My Orders</h3>
                                 <OrderCard 
-                                    orderDate="24 Jun, 2022" 
+                                    orderDate="12 Jan, 2022" 
                                     orderId="1234" 
                                     title="Brookside Fresh Milk 500 ml"
                                     img="https://s3-eu-west-1.amazonaws.com/naivas-live/productImage/NVS5749_2.jpg"
                                     deliveredDate="15 Jan, 2023"
                                 />
                                 <OrderCard 
-                                    orderDate="24 Jun, 2022" 
+                                    orderDate="13 Jan, 2022" 
                                     orderId="1334" 
                                     title="Goat Ribs 500 g"
                                     img="https://s3-eu-west-1.amazonaws.com/naivas-live/productImage/NVSO034x.jpg"
-                                    deliveredDate="15 Jan, 2023"
+                                    deliveredDate="16 Jan, 2023"
                                 />
                             </Tab.Pane>
                             <Tab.Pane eventKey="account-details">
@@ -98,7 +100,7 @@ const MyAccount = () => {
                             <hr />
                             <div>
                                 {/* { !user || showForm ? ( */}
-                                <form>
+                                <form onSubmit={handleUpdate}>
                                     <div className="row">
                                         <div className="col-md-6 mb-3">
                                             <label htmlFor="name">Full name</label>
@@ -167,7 +169,7 @@ const MyAccount = () => {
                                     </div>
                                     <hr/>
                                     <div className="mb-3">
-                                        <button className='btn px-3'>Update</button>
+                                        <button className='btn px-3' type="submit">Update</button>
                                     </div>
                                 </form>
                                  {/* ) : ( 

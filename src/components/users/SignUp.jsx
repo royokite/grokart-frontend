@@ -5,6 +5,7 @@ import Loading from "../Loading";
 function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [contact, setContact] = useState();
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const {signup, error, isLoading} = useSignup()
@@ -12,7 +13,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await signup(username, email, password, passwordConfirmation)
+    await signup(username, email, contact, password, passwordConfirmation)
   }
   
   return (
@@ -28,79 +29,89 @@ function SignUp() {
         className="form-group position-absolute top-50 start-50 translate-middle"
       >
         <img
-          src="./images/WhatsApp_Image_2023-01-06_at_3.57.54_PM__1_-removebg-preview.png"
-          className="card-img mb-2 w-50 position-relative start-50 translate-middle top-0"
+          src="./images/logo-no-bg.png"
+          className="card-img"
           alt="banner"
-          height={120}
-          
+          height={120}          
         />
-        <label>
-          <input
-            className="form-control  form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
-            type="text"
-            placeholder="Username"
+        <div className="mb-3">
+          <input 
+            type="text" 
+            className="form-control" 
+            id="username" 
+            placeholder="username" 
             value={username}
             onChange={(event) => setUsername(event.target.value)}
-            required
-            id = "form-control1"
-          />
-        </label>
-        <br />
-        <label>
-          <input
-            className="form-control mb-2 pl-3 form-control-lg mt-5"
-            type="email"
-            placeholder="Email"
+            required />
+        </div>
+
+        <div className="mb-3">
+          <input 
+            type="email" 
+            className="form-control" 
+            id="email" 
+            placeholder="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            required
-            id = "form-control1"
-          />
-        </label>
-        <br />
-        <label>
-          <input
-            className="form-control mb-2 form-control-lg mt-3"
-            placeholder="Password"
-            type="password"
+            required />
+        </div>
+
+        <div className="mb-3">
+          <input 
+            type="number" 
+            className="form-control" 
+            id="contact" 
+            placeholder="phone number" 
+            maxLength="12"
+            value={contact}
+            onChange={(event) => setContact(event.target.value)}
+            required />
+        <small className="text-warning">254XXXXXXXXX</small>
+        </div>
+
+        <div className="mb-3">
+          <input 
+            type="password" 
+            className="form-control" 
+            id="password" 
+            placeholder="password" 
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            required
-            id="form-control1"
-          />
-        </label>
-        <br />
-        <label>
-          <input
-            className="form-control mb-2 pl-3 mt-3 form-control-lg"
-            placeholder="Confirm password"
-            type="password"
+            required />
+        <small className="text-warning">6 in length, 1 upper and 1 special character</small>
+        </div>
+
+        <div className="mb-3">
+          <input 
+            type="password" 
+            className="form-control" 
+            id="confirm-password" 
+            placeholder="confirm password" 
             value={passwordConfirmation}
             onChange={(event) => setPasswordConfirmation(event.target.value)}
-            required
-            id="form-control1"
-          />
-        </label>
-        <br />
+            required />
+        </div>
+        {error && <div className="error">{error}</div>}
         {
         isLoading ? 
         <Loading/> : 
         <button
-          className="btn position-absolute start-50 translate-middle mt-5"
+          className="btn mt-2"
           type="submit"
-          id = "signupbtn"
+          id = "loginbtn"
           >
           Sign Up
         </button>
         }
-        {error && <div className="error">{error}</div>}
-      </form>
-      <a
-        href="/login"
-        className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-5" id="login-button"
-      >
+        <br />
+        <br />
+        <a
+          href="/login"
+          className="text-warning" id="login-button"
+        >
         Already have an account? <strong>Sign in here!</strong>
       </a>
+      </form>
     </section>
   );
 }

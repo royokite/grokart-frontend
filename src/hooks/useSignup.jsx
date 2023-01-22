@@ -8,20 +8,20 @@ export const useSignup = () => {
   const { dispatch } = useAuthContext()
   const navigate = useNavigate()
 
-  const signup = async (username, email, password, password_confirmation) => {
+  const signup = async (username, email, contact, password, password_confirmation) => {
     setIsLoading(true)
     setError(null)
 
     const response = await fetch("https://grokart.onrender.com/signup", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ username, email, password, password_confirmation })
+      body: JSON.stringify({ username, email, contact, password, password_confirmation })
     })
     const json = await response.json()
 
     if (!response.ok) {
       setIsLoading(false)
-      setError(json.error)
+      setError(json.errors)
     }
     if (response.ok) {
       // save the user to local storage

@@ -27,47 +27,48 @@ function Login() {
 
     <form onSubmit={handleSubmit} className="form-group position-absolute top-50 start-50 translate-middle">
       <img
-          src="./images/WhatsApp_Image_2023-01-06_at_3.57.54_PM__1_-removebg.png"
-          className="card-img mb-4 w-50 position-relative start-50 translate-middle top-0"
+          src="./images/logo-no-bg.png"
+          className="card-img w-50 position-relative start-50 translate-middle top-0"
           alt="banner"
           height={120}
     
           />
-      <label >
-        <input 
-          className="form-control mb-5 form-control-lg mx-auto d-block position-absolute start-50 mt-5 translate-middle"
-          type="email"
-          placeholder='Email'
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          id = "form-control1"
-        />
-      </label>
-      <br />
-      <label>
-        <input 
-          className="form-control mb-5 pl-3 form-control-lg mt-5"
-          type="password"
-          placeholder='Password'
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          id = "form-control1"
-        />
-      </label>
-      <br />      
+      <div className="mb-3">
+          <input 
+            type="email" 
+            className="form-control" 
+            id="email" 
+            placeholder="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required />
+        </div>
+
+        <div className="mb-3">
+          <input 
+            type="password" 
+            className="form-control" 
+            id="paswword" 
+            placeholder="password" 
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required />
+        </div>
+      {error && <div className="error">{error}</div>}      
       {
         isLoading ? 
         <Loading/> : 
         <button 
-          className="btn position-absolute start-50 translate-middle mt-5"
+          className="btn mt-2"
           type="submit"
           id = "loginbtn"
         >Sign In
         </button>
       }
-      {error && <div className="error">{error}</div>}      
+      <br />
+      <br />
+      <a href="/signup" className="text-warning">Don't have an account? <strong>Sign up here!</strong></a>
     </form>    
-    <a href="/signup" className="text-warning position-absolute bottom-0 start-50 translate-middle mt-5 mb-5">Don't have an account? <strong>Sign up here!</strong></a>
     </section>
 
 
