@@ -12,11 +12,17 @@ export const useSignup = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch("https://grokart.onrender.com/signup", {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ username, email, contact, password, password_confirmation })
-    })
+    const response = await fetch("http://127.0.0.1:4000/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username,
+        email,
+        contact,
+        password,
+        password_confirmation,
+      }),
+    });
     const json = await response.json()
 
     if (!response.ok) {

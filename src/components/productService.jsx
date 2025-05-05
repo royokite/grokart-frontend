@@ -1,4 +1,4 @@
-const baseURL = "https://grokart.onrender.com";
+const baseURL = "http://127.0.0.1:4000";
 
 export const getProducts = async() => {
     return await fetch(baseURL + "/products").then(res => res.json());
