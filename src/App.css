@@ -122,3 +122,18 @@ div.error {
 input.error {
   border: 1px solid var(--error);
 }
+
+.product-card .card {
+  transition: transform 0.3s ease;
+}
+.product-card .card:hover {
+  transform: translateY(-5px);
+}
+.tooltip {
+  /* background-color: #f97316 !important; */
+  /* color: #fff !important; */
+  border-radius: 8px;
+  /* padding: 6px 10px; */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
