@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useCart } from "react-use-cart";
-import { useState } from "react";
 import { Overlay, Tooltip } from "react-bootstrap";
-import { useRef } from "react";
 
 const ProductCard = ({ product }) => {
   const { addItem } = useCart();
@@ -13,53 +11,61 @@ const ProductCard = ({ product }) => {
     addItem(product);
   };
 
-  let showAlert = false;
-
   const handleClick = () => {
-    showAlert = !showAlert
+    setShow(true);
     setTimeout(() => {
-      showAlert = !showAlert;
       setShow(false);
     }, 2000);
   };
 
   return (
-    <div className="col-md-3 mb-4 position-relative product-card">
+    <div className="col-md-3 mb-4">
       <div
-        className="card h-100 text-center p-4 border-0"
-        style={{ backgroundColor: "#181a1b" }}
+        className="card h-100 text-center p-3 border-0 shadow-lg rounded-4"
+        style={{ backgroundColor: "#1f1f1f" }}
       >
         <img
           src={product.image}
-          className="card-img-topz"
+          className="card-img-top object-fit-cover rounded-3"
           alt={product.name}
-          height="250px"
+          style={{ height: "250px", objectFit: "cover" }}
         />
         <div className="card-body">
-          <h5 className="card-title mb-0 text-white">{product.name}</h5>
-          <p className="card-text lead fw-bold" style={{ color: "#f97316" }}>
+          <h5 className="card-title mb-2 text-white">{product.name}</h5>
+          <p
+            className="card-text lead fw-semibold"
+            style={{ color: "#f97316" }}
+          >
             Ksh. {product.price}
           </p>
-          <div>
+          <div className="position-relative">
             <button
               ref={target}
-              className="btn btn-outline-dark position-absolute bottom-0 start-50 translate-middle-x text-white"
+              className="btn btn-outline-light w-100 mt-3 fw-bold transition"
               onClick={() => {
                 addToCart();
                 handleClick();
-                setShow(!show);
               }}
+              style={{
+                borderColor: "#f97316",
+                color: "#f97316",
+              }}
+              onMouseEnter={(e) => (
+                (e.target.style.backgroundColor = "#f97316"),
+                (e.target.style.color = "#fff")
+              )}
+              onMouseLeave={(e) => (
+                (e.target.style.backgroundColor = "transparent"),
+                (e.target.style.color = "#f97316")
+              )}
             >
               Add to Cart
             </button>
-            <Overlay target={target.current} show={show} placement="right">
+
+            <Overlay target={target.current} show={show} placement="top">
               {(props) => (
-                <Tooltip
-                  className="fade-out"
-                  id="overlay-cart"
-                  {...props}
-                >
-                  Item added!
+                <Tooltip id="overlay-cart" {...props} className="fade show">
+                  ✅ Item added!
                 </Tooltip>
               )}
             </Overlay>
@@ -69,4 +75,5 @@ const ProductCard = ({ product }) => {
     </div>
   );
 };
+
 export default ProductCard;
