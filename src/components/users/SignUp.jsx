@@ -26,8 +26,8 @@ function SignUp() {
 
       <form
         onSubmit={handleSubmit}
-        className="form-group bg-dark p-4 rounded position-absolute top-50 start-50 translate-middle shadow"
-        style={{ maxWidth: "450px", width: "90%" }}
+        className="d-flex flex-column form-group bg-dark p-4 rounded position-absolute top-50 start-50 translate-middle shadow mh-80 "
+        style={{ maxWidth: "450px", width: "90%"}}
       >
         <div className="text-center mb-4">
           <img

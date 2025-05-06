@@ -9,7 +9,6 @@ const Products = ({
   setFilter,
   filterProduct,
 }) => {
-
   const filterByName = () => {
     const name = document.getElementById("productName").value;
     const filteredProducts = allProducts.filter((product) =>
@@ -36,7 +35,7 @@ const Products = ({
                 className="form-control me-2 w-25 text-dark fw-bold border-0 bg-light rounded-pill shadow-sm"
                 id="productName"
                 type="search"
-                placeholder ="Search Products"
+                placeholder="Search Products"
                 onChange={filterByName}
               />
               {/* <button
@@ -91,16 +90,15 @@ const Products = ({
               Pantry
             </button>
           </div>
-          <hr className="mt-5"/>
+          <hr className="mt-5" />
           <div className="flex-wrapper">
-          <div className="row justify-content-center product-row g-5 mt-1">
-            <div className="row justify-content-center">
-              {loading ? <Loading /> : renderProducts}
+            <div className="row justify-content-center product-row g-5 mt-1">
+              <div className="row justify-content-center">
+                {loading ? <Loading /> : renderProducts}
+              </div>
             </div>
           </div>
-          </div>
-          <hr className="mt-4"
-          />
+          <hr className="mt-4" />
         </div>
       </div>
     </div>

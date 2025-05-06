@@ -67,7 +67,7 @@
 /* ---------------------- */
 /* Form Input Styling */
 /* ---------------------- */
-.form-control,
+
 #productName {
   background: transparent !important;
   border: 1px solid var(--light-text) !important;
@@ -82,7 +82,7 @@
 
 input.form-control::placeholder,
 input.productName::placeholder {
-  color: aliceblue !important;
+  color: gray !important;
 }
 
 input.error {
