@@ -25,12 +25,11 @@ const MyAccount = () => {
             address
         };
 
-        fetch(`https://grokart.onrender.com/users/${user.user.id}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updateUser)
-        })
-        .then(res => res.json())        
+        fetch(`https://grokart-backend.onrender.com/${user.user.id}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updateUser),
+        }).then((res) => res.json()); 
     };
 
     return (

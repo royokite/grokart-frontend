@@ -21,8 +21,6 @@
   outline-color: red;
 }
 
-/* Glassmorphism effect for navbar - optional */
-/*
 .navbar {
   background: rgba(38, 27, 180, 0.01);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -30,8 +28,6 @@
   -webkit-backdrop-filter: blur(5.6px);
   border: 1px solid rgba(38, 27, 180, 0.13);
 }
-*/
-
 /* ---------------------- */
 /* Button Styling */
 /* ---------------------- */

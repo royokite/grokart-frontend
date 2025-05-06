@@ -22,7 +22,9 @@ function App() {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:4000/products");
+      const response = await fetch(
+        "https://grokart-backend.onrender.com/products"
+      );
       const json = await response.json();
        
       setAllProducts(json);
