@@ -1,139 +1,154 @@
-/*Navbar*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
+/* Root Variables */
+:root {
+  --primary-green: #4d7e3e;
+  --accent-orange: #f97316;
+  --dark-bg: #262c2c;
+  --light-text: #fdf5ef;
+  --error: #ff4c4c;
+}
+
+/* ---------------------- */
+/* Navbar Styling */
+/* ---------------------- */
 .navbar-nav a {
   font-size: 18px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn:active {
   outline-color: red;
 }
 
-/* .navbar {
+/* Glassmorphism effect for navbar - optional */
+/*
+.navbar {
   background: rgba(38, 27, 180, 0.01);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.6px);
   -webkit-backdrop-filter: blur(5.6px);
   border: 1px solid rgba(38, 27, 180, 0.13);
-} */
+}
+*/
 
-.btn {
-  background-color: #4d7e3e !important;
-  /* width: 75%; */
+/* ---------------------- */
+/* Button Styling */
+/* ---------------------- */
+.btn,
+.Checkout,
+.account-cart {
+  background-color: var(--primary-green) !important;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #f97316 !important;
-  /* width: 75%; */
-}
-
-.Checkout {
-  background-color: #4d7e3e;
-}
-
-.account-cart {
-  background-color: #4d7e3e;
-  width: 3rem;
-}
-
-.badge {
-  background-color: #f97316;
-}
-
-input[type="search"] {
-  /* background-color: #4d7e3e; */
-  color: #f97316 !important;
-}
-
-hr {
-  border-top: 2px solid #f97316 !important;
-}
-
-tbody {
-  background-color: #393d40 !important;
+  background-color: var(--accent-orange) !important;
 }
 
 #loginbtn {
   width: 350px !important;
   height: 50px !important;
-  background-color: #262c2c !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  background-color: var(--dark-bg) !important;
+  font-family: system-ui, sans-serif;
   color: #ffffff;
 }
 
 #loginbtn:hover {
-  background-color: #f97316 !important;
+  background-color: var(--accent-orange) !important;
 }
-.form-control {
+
+/* Badge */
+.badge {
+  background-color: var(--accent-orange);
+}
+
+/* ---------------------- */
+/* Form Input Styling */
+/* ---------------------- */
+.form-control,
+#productName {
   background: transparent !important;
-  border: 1px solid #fdf5ef !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  border: 1px solid var(--light-text) !important;
+  font-family: system-ui, sans-serif;
   color: aliceblue !important;
   height: 60px;
 }
 
-input.form-control1::-webkit-input-placeholder {
-  color: aliceblue !important;
-}
-
-.fade-out {
-  animation: fadeOut 2s;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 #productName {
-  background: transparent !important;
-  border: 1px solid #fdf5ef !important;
-  color: aliceblue !important;
   height: 45px;
 }
 
-input.productName::-webkit-input-placeholder {
+input.form-control::placeholder,
+input.productName::placeholder {
   color: aliceblue !important;
 }
 
-#overlay-cart {
-  background-color: #4d7e3e;
-}
-
-#banner-img {
-  height: 100vh;
-}
-
-div.error {
-  /* padding: 10px; */
-  background: #f97316;
-  border: 1px solid var(--error);
-  color: var(--error);
-  border-radius: 4px;
-  /* margin: 20px 0; */
-  text-align: center;
-}
 input.error {
   border: 1px solid var(--error);
 }
 
+/* Search Input */
+input[type="search"] {
+  color: var(--accent-orange) !important;
+}
+
+/* Error Message */
+div.error {
+  background: var(--accent-orange);
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* ---------------------- */
+/* Product Card Effects */
+/* ---------------------- */
 .product-card .card {
   transition: transform 0.3s ease;
 }
 .product-card .card:hover {
   transform: translateY(-5px);
 }
-.tooltip {
-  /* background-color: #f97316 !important; */
-  /* color: #fff !important; */
+
+/* Tooltip */
+.tooltip,
+#overlay-cart {
+  background-color: var(--primary-green);
+  color: white;
   border-radius: 8px;
-  /* padding: 6px 10px; */
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+/* Fade Out Animation */
+.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---------------------- */
+/* Miscellaneous */
+/* ---------------------- */
+hr {
+  border-top: 2px solid var(--accent-orange) !important;
+}
+
+tbody {
+  background-color: #393d40 !important;
+}
+
+#banner-img {
+  height: 100vh;
+  object-fit: cover;
 }
