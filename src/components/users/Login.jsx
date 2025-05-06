@@ -14,39 +14,36 @@ function Login() {
 
   return (
     <section className="signin-container position-relative">
-      {/* Background Image */}
       <img
         src="./images/access-bg.png"
-        className="img-fluid w-100 position-absolute top-0 start-0"
-        alt="Access background"
-        style={{
-          height: "100vh",
-          objectFit: "cover",
-          zIndex: "-1",
-          filter: "brightness(60%)",
-        }}
+        alt="Login background"
+        className="img-fluid w-100"
+        style={{ height: "100vh", objectFit: "cover" }}
       />
 
-      {/* Login Form */}
       <form
         onSubmit={handleSubmit}
-        className="form-group bg-dark bg-opacity-75 rounded p-5 shadow-lg position-absolute top-50 start-50 translate-middle text-white"
-        style={{ width: "100%", maxWidth: "400px" }}
+        className="form-group bg-dark p-4 rounded position-absolute top-50 start-50 translate-middle shadow"
+        style={{ maxWidth: "400px", width: "90%" }}
       >
         <div className="text-center mb-4">
           <img
             src="./images/logo-no-bg.png"
-            className="img-fluid"
-            alt="GroKart Logo"
-            style={{ height: "80px" }}
+            alt="GroKart logo"
+            className="w-50"
+            height={120}
           />
         </div>
 
         <div className="mb-3">
+          <label htmlFor="email" className="form-label text-white">
+            Email
+          </label>
           <input
             type="email"
+            id="email"
             className="form-control"
-            placeholder="Email address"
+            placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -54,22 +51,26 @@ function Login() {
         </div>
 
         <div className="mb-3">
+          <label htmlFor="password" className="form-label text-white">
+            Password
+          </label>
           <input
             type="password"
+            id="password"
             className="form-control"
-            placeholder="Password"
+            placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
 
-        {error && <div className="text-danger mb-3">{error}</div>}
+        {error && <div className="error mb-3">{error}</div>}
 
         {isLoading ? (
           <Loading />
         ) : (
-          <button type="submit" className="btn btn-warning w-100 fw-semibold">
+          <button className="btn w-100 mt-2" type="submit" id="loginbtn">
             Sign In
           </button>
         )}
