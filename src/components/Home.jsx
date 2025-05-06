@@ -2,33 +2,54 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="hero">
-      <div className="card text-bg-dark text-white border-0">
+    <section className="hero position-relative">
+      <div className="card bg-dark text-white border-0">
         <img
           src="./images/welcome-bg.png"
-          className="card-img"
-          alt="background"
+          className="card-img object-fit-cover"
+          alt="Fresh groceries background"
           height="660"
-          style={{objectFit: "cover"}}
+          style={{ objectFit: "cover", filter: "brightness(60%)" }}
         />
-        <div className="card-img-overlay d-flex flex-column justify-content-center ">
-          <div className="container">
-            <h1 className="card-title fw-bold" style={{color: "#4d7e3e"}}>
-              WELCOME TO GROKART
+
+        <div className="card-img-overlay d-flex align-items-center justify-content-center">
+          <div className="container text-center">
+            <h1
+              className="display-4 fw-bold mb-3"
+              style={{ color: "#4d7e3e", textShadow: "1px 1px 2px #000" }}
+            >
+              Welcome to GroKart
             </h1>
-            <hr className="w-25 text-dark"/>
-            <p className="card-text text-justify" style={{color: "#f97316"}}>
-              <strong>
-                The easiest way to shop for groceries online! <br/>With GroKart, you
-                can shop from the comfort of your home.<br/> Start shopping with GroKart today and discover
-                the  <br/> future of grocery shopping.
-              </strong>
+
+            <hr
+              className="mx-auto mb-4"
+              style={{ width: "80px", borderColor: "#f97316" }}
+            />
+
+            <p
+              className="lead fw-medium mx-auto mb-4"
+              style={{
+                color: "#f97316",
+                maxWidth: "600px",
+                textShadow: "1px 1px 2px #000",
+              }}
+            >
+              The easiest way to shop for groceries online.
+              <br />
+              Shop comfortably from your home with GroKart.
+              <br />
+              Discover the future of grocery shopping today.
             </p>
-            <hr className="w-25 text-dark"/>
+
+            <hr
+              className="mx-auto"
+              style={{ width: "80px", borderColor: "#f97316" }}
+            />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
 export default Home;
