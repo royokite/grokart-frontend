@@ -48,7 +48,7 @@
 }
 
 #loginbtn {
-  width: 350px !important;
+  /* width: 350px !important; */
   height: 50px !important;
   background-color: var(--dark-bg) !important;
   font-family: system-ui, sans-serif;
