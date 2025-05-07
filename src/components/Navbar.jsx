@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { totalItems } = useCart();
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
-  const navigate = useNavigate()
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    logout()
-  }  
+    logout();
+  };
 
   return (
     <nav
@@ -34,32 +34,49 @@ const Navbar = () => {
             {user && (
               <div className="m-2 me-4 fst-italic">
                 <span>Hello, </span>
-                <strong style={{color: "#f97316"}}><span>{user.user.username}</span></strong>
+                <strong style={{ color: "#f97316" }}>
+                  <span>{user.user.username}</span>
+                </strong>
               </div>
             )}
-            <div className="dropdown">
+            <div className="dropdown" style={{ position: "static" }}>
               <span
                 className="account-cart btn dropdown-toggle rounded-circle me-2"
                 data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 <i className="fa fa-user-circle"></i>
               </span>
-              <ul className="dropdown-menu">
-                { user && 
+              <ul
+                className="dropdown-menu dropdown-menu-end"
+                style={{
+                  position: "absolute",
+                  margin: 0,
+                }}
+              >
+                {user && (
                   <li>
-                    <a className="dropdown-item" href="/my-account">
+                    <a className="dropdown-item " href="/my-account">
                       My Account
                     </a>
                   </li>
-                }
+                )}
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  { user ? 
-                    <button className="btn dropdown-item" onClick={handleClick}>Log out</button> : 
-                    <button className="btn dropdown-item" onClick={() => navigate("/login")}>Log In</button>
-                  }
+                  {user ? (
+                    <button className="btn dropdown-item" onClick={handleClick}>
+                      Log out
+                    </button>
+                  ) : (
+                    <button
+                      className="btn dropdown-item"
+                      onClick={() => navigate("/login")}
+                    >
+                      Log In
+                    </button>
+                  )}
                 </li>
               </ul>
             </div>
@@ -78,7 +95,5 @@ const Navbar = () => {
     </nav>
   );
 };
-
-
 
 export default Navbar;

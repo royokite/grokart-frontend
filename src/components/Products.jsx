@@ -11,21 +11,24 @@ const Products = ({
 }) => {
   const filterByName = () => {
     const name = document.getElementById("productName").value;
+    if (!Array.isArray(allProducts)) return;
     const filteredProducts = allProducts.filter((product) =>
       product.name.toLowerCase().includes(name.toLowerCase())
     );
     setFilter(filteredProducts);
   };
 
-  const renderProducts = filter.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ));
+  const renderProducts = Array.isArray(filter)
+    ? filter.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))
+    : null;
 
   return (
     <div className="container-fluid">
       <div className="container my-5 py-5 text-white">
         <div className="row">
-          <div className="col-12 mb-5 color: ">
+          <div className="col-12 mb-5">
             <h1 className="display-6 fw-bolder text-center">
               Available Products
             </h1>
@@ -38,12 +41,6 @@ const Products = ({
                 placeholder="Search Products"
                 onChange={filterByName}
               />
-              {/* <button
-                className="btn btn-outline-dark me-2 rounded-pill shadow-sm text-center"
-                onClick={filterByName}
-              >
-                Search
-              </button> */}
             </div>
           </div>
           <div className="buttons d-flex justify-content-center mb-2 mw-100">

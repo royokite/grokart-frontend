@@ -20,6 +20,7 @@ export const useLogin = () => {
     const json = await response.json()
 
     if (!response.ok) {
+      console.log(response)
       setIsLoading(false)
       setError(json.error)
     }
@@ -35,7 +36,6 @@ export const useLogin = () => {
       } else {
         navigate("/")
       }
-      
       // update loading state
       setIsLoading(false)
     }
